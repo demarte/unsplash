@@ -99,13 +99,10 @@
 		EC6D712F266642EC0037DC6A /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
-				EC6D7130266642EC0037DC6A /* AppDelegate.swift */,
-				EC6D7132266642EC0037DC6A /* SceneDelegate.swift */,
+				EC6D7160266643030037DC6A /* Supporting Files */,
 				EC6D7134266642EC0037DC6A /* ViewController.swift */,
 				EC6D7136266642EC0037DC6A /* Main.storyboard */,
 				EC6D7139266642ED0037DC6A /* Assets.xcassets */,
-				EC6D713B266642ED0037DC6A /* LaunchScreen.storyboard */,
-				EC6D713E266642ED0037DC6A /* Info.plist */,
 			);
 			path = Unsplash;
 			sourceTree = "<group>";
@@ -126,6 +123,17 @@
 				EC6D7154266642EE0037DC6A /* Info.plist */,
 			);
 			path = UnsplashUITests;
+			sourceTree = "<group>";
+		};
+		EC6D7160266643030037DC6A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC6D713E266642ED0037DC6A /* Info.plist */,
+				EC6D713B266642ED0037DC6A /* LaunchScreen.storyboard */,
+				EC6D7132266642EC0037DC6A /* SceneDelegate.swift */,
+				EC6D7130266642EC0037DC6A /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,7 +445,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Unsplash/Info.plist;
+				DEVELOPMENT_TEAM = QQF7JL5XW3;
+				INFOPLIST_FILE = "$(SRCROOT)/Unsplash/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,7 +464,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Unsplash/Info.plist;
+				DEVELOPMENT_TEAM = QQF7JL5XW3;
+				INFOPLIST_FILE = "$(SRCROOT)/Unsplash/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
