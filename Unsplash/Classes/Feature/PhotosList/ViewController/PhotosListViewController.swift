@@ -9,6 +9,10 @@ import UIKit
 
 class PhotosListViewController: UIViewController {
 
+    // MARK: - Public Properties
+
+    var showDetails: ((Photo) -> Void)?
+
     // MARK: - Private Properties
 
     private let viewModel: PhotosListViewModelProtocol?
@@ -59,13 +63,14 @@ class PhotosListViewController: UIViewController {
     private func setUpView() {
         view.addSubview(collectionView)
         view.addSubview(activityView)
+        view.backgroundColor = .systemBackground
         setUpCollectionView()
     }
 
     private func setUpCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = .clear
         collectionView.register(PhotosListCell.self, forCellWithReuseIdentifier: PhotosListCell.cellIdentifier)
     }
 
@@ -141,11 +146,23 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
         switch viewModel.state.value {
         case .loaded(let photos):
             let photo = photos[indexPath.row]
-            cell.setUpCell(with: photo)
+            let viewModelCell = PhotosListCellViewModel(model: photo)
+            cell.setUpCell(with: viewModelCell)
         default:
             break
         }
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        switch viewModel.state.value {
+        case .loaded(let photos):
+            let photo = photos[indexPath.row]
+            showDetails?(photo)
+        default:
+            return
+        }
     }
 }
 

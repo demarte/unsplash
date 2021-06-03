@@ -36,7 +36,6 @@ final class PhotosListViewModel: PhotosListViewModelProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let photos):
-                print(photos)
                 self.state.value = .loaded(photos)
             case .failure(let error):
                 self.handleAPIError(error)
@@ -47,7 +46,6 @@ final class PhotosListViewModel: PhotosListViewModelProtocol {
     // MARK: - Private Methods
 
     private func handleAPIError(_ error: APIResponseError) {
-        print(error)
         state.value = .error(error)
     }
 }

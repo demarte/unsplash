@@ -25,8 +25,19 @@ class PhotosListCoordinator: Coordinator {
     func start() {
         let viewModel = PhotosListViewModel()
         let viewController = PhotosListViewController(viewModel: viewModel)
+        viewController.showDetails = showDetails
+        viewController.navigationItem.title = "Unsplash"
+        viewController.navigationItem.largeTitleDisplayMode = .automatic
         navigationController.pushViewController(viewController, animated: false)
-        navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.title = "Unsplash"
+    }
+}
+
+extension PhotosListCoordinator {
+
+    func showDetails(for photo: Photo) {
+        let viewModel = PhotoDetailViewModel(photoId: photo.id ?? String())
+        let viewController = PhotoDetailViewController(viewModel: viewModel)
+        viewController.navigationItem.title = photo.altDescription ?? "Photo"
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

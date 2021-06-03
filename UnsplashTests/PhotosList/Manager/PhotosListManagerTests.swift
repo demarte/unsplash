@@ -51,7 +51,6 @@ class PhotosListManagerTests: XCTestCase {
             case .success:
                 XCTFail("Expected failure")
             case .failure(let error):
-                print(error)
                 XCTAssertEqual(error, .noData)
             }
         }
