@@ -1,0 +1,870 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+			productName = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		114BCCC09F34267EE579996C85EFD4AB /* Pods-Unsplash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53446878FAB687AA94B5946E11F590AD /* Pods-Unsplash-dummy.m */; };
+		16A9B9571DD763FA82D4D0CD10A00574 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		4595782957B5BE3144860DB3053A1251 /* Pods-Unsplash-UnsplashUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB14BF101A78C4A2BB2F50AFA1B71E74 /* Pods-Unsplash-UnsplashUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6FDD30BCFFBC812CD574851D25E11091 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8FC522FD99E08D6DE38AD88305FB7931 /* Pods-Unsplash-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D67465A0DE871992A6FDD676217D216 /* Pods-Unsplash-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2872A06766F0EBD171625537EF9DF8A /* Pods-UnsplashTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5C63770DFBC599404948462B467AB98 /* Pods-UnsplashTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2D953042B6F050FA78784ED5B543EB2 /* Pods-UnsplashTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F33FC765038E563A143C7221C9963E38 /* Pods-UnsplashTests-dummy.m */; };
+		B9DB426401A87B7186BCC724D874A1AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C39BE32CF52541E410055BE34377938E /* Pods-Unsplash-UnsplashUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B52116FD798D643269DE440E9635697B /* Pods-Unsplash-UnsplashUITests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F8E688C1D81E2D67456F76CB20EAB59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		5AE925AF6B6D089B23A1CFCEE9EA1B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		9E7FCCA75BA4ADCF99A1ACBF84FA0661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 412AE95CD21737CC5C6E0D6692C95A39;
+			remoteInfo = "Pods-Unsplash";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01F1518FE0398B0A883AC420738DE333 /* Pods_Unsplash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0980B80EED92F1A553F284A4A48CE311 /* Pods-Unsplash-UnsplashUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Unsplash-UnsplashUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1733702117F512EFDDCC3250560D88C2 /* Pods-UnsplashTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UnsplashTests.release.xcconfig"; sourceTree = "<group>"; };
+		22D49617EC3C3F3DF14E43F24D41C372 /* Pods-Unsplash-UnsplashUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Unsplash-UnsplashUITests.modulemap"; sourceTree = "<group>"; };
+		280E74EEEBCF8D646B709FFEFBDF3B7C /* Pods_Unsplash_UnsplashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash_UnsplashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3581984BF8BFD63E2D792969809D313E /* Pods-Unsplash-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Unsplash-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		4042DA50E93E932FD8844C084673A896 /* Pods_UnsplashTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnsplashTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495C01EC885CAC743DC44016C6CE0697 /* Pods-Unsplash.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Unsplash.modulemap"; sourceTree = "<group>"; };
+		53446878FAB687AA94B5946E11F590AD /* Pods-Unsplash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Unsplash-dummy.m"; sourceTree = "<group>"; };
+		69B8494D639CCC1326979FDAF369B0AE /* Pods-UnsplashTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UnsplashTests-Info.plist"; sourceTree = "<group>"; };
+		6B73D3AC3AAECBF4838867DC859DF5A6 /* Pods-Unsplash-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Unsplash-Info.plist"; sourceTree = "<group>"; };
+		6D67465A0DE871992A6FDD676217D216 /* Pods-Unsplash-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Unsplash-umbrella.h"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		74AD49AB6E510599A64045251E3BE6AD /* Pods-Unsplash-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Unsplash-acknowledgements.plist"; sourceTree = "<group>"; };
+		7B26F51E023FE7C99EEB58A666E669C8 /* Pods-Unsplash-UnsplashUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Unsplash-UnsplashUITests-Info.plist"; sourceTree = "<group>"; };
+		7D502E528BD3450ED745AD666510B7C9 /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Unsplash-UnsplashUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		8D2A1946DB4A15659C6E139478F4225E /* Pods-UnsplashTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UnsplashTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ADA043B488170A10152377A8F47F7168 /* Pods-Unsplash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Unsplash.debug.xcconfig"; sourceTree = "<group>"; };
+		B0DEAF4D9BCBAA85AB573158791843C8 /* Pods-UnsplashTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UnsplashTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B52116FD798D643269DE440E9635697B /* Pods-Unsplash-UnsplashUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Unsplash-UnsplashUITests-dummy.m"; sourceTree = "<group>"; };
+		B9DF381B98733686C47B142D4CCBA8FA /* Pods-Unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Unsplash.release.xcconfig"; sourceTree = "<group>"; };
+		CEBA45CF4941EDAF44DAA991E22D99B4 /* Pods-UnsplashTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UnsplashTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D34159978D65B5F06D69729430CFA887 /* Pods-Unsplash-UnsplashUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Unsplash-UnsplashUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DB14BF101A78C4A2BB2F50AFA1B71E74 /* Pods-Unsplash-UnsplashUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Unsplash-UnsplashUITests-umbrella.h"; sourceTree = "<group>"; };
+		EC2F5B4F2666F8DD0071FF05 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		F13F645652E5BEB09A8CD8FD992177F2 /* Pods-UnsplashTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UnsplashTests.modulemap"; sourceTree = "<group>"; };
+		F33FC765038E563A143C7221C9963E38 /* Pods-UnsplashTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UnsplashTests-dummy.m"; sourceTree = "<group>"; };
+		F5C63770DFBC599404948462B467AB98 /* Pods-UnsplashTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UnsplashTests-umbrella.h"; sourceTree = "<group>"; };
+		F91D7EB95FFB891270F1B53157877949 /* Pods-Unsplash-UnsplashUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Unsplash-UnsplashUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F7D2511C54D467C3DAEE72CAD9C2370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FDD30BCFFBC812CD574851D25E11091 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9507CF3ACA46E97FA680861C50884AD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9DB426401A87B7186BCC724D874A1AE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB536007B2B1B7DC9276DA7E5D16B4C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A9B9571DD763FA82D4D0CD10A00574 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45437B434C00FCEC13D2DA8C7EBEB3A6 /* Pods-Unsplash */ = {
+			isa = PBXGroup;
+			children = (
+				495C01EC885CAC743DC44016C6CE0697 /* Pods-Unsplash.modulemap */,
+				3581984BF8BFD63E2D792969809D313E /* Pods-Unsplash-acknowledgements.markdown */,
+				74AD49AB6E510599A64045251E3BE6AD /* Pods-Unsplash-acknowledgements.plist */,
+				53446878FAB687AA94B5946E11F590AD /* Pods-Unsplash-dummy.m */,
+				6B73D3AC3AAECBF4838867DC859DF5A6 /* Pods-Unsplash-Info.plist */,
+				6D67465A0DE871992A6FDD676217D216 /* Pods-Unsplash-umbrella.h */,
+				ADA043B488170A10152377A8F47F7168 /* Pods-Unsplash.debug.xcconfig */,
+				B9DF381B98733686C47B142D4CCBA8FA /* Pods-Unsplash.release.xcconfig */,
+			);
+			name = "Pods-Unsplash";
+			path = "Target Support Files/Pods-Unsplash";
+			sourceTree = "<group>";
+		};
+		47A48EFD414DBAE4F5EFEF7A1C6E17DF /* Pods-Unsplash-UnsplashUITests */ = {
+			isa = PBXGroup;
+			children = (
+				22D49617EC3C3F3DF14E43F24D41C372 /* Pods-Unsplash-UnsplashUITests.modulemap */,
+				F91D7EB95FFB891270F1B53157877949 /* Pods-Unsplash-UnsplashUITests-acknowledgements.markdown */,
+				0980B80EED92F1A553F284A4A48CE311 /* Pods-Unsplash-UnsplashUITests-acknowledgements.plist */,
+				B52116FD798D643269DE440E9635697B /* Pods-Unsplash-UnsplashUITests-dummy.m */,
+				7B26F51E023FE7C99EEB58A666E669C8 /* Pods-Unsplash-UnsplashUITests-Info.plist */,
+				DB14BF101A78C4A2BB2F50AFA1B71E74 /* Pods-Unsplash-UnsplashUITests-umbrella.h */,
+				7D502E528BD3450ED745AD666510B7C9 /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */,
+				D34159978D65B5F06D69729430CFA887 /* Pods-Unsplash-UnsplashUITests.release.xcconfig */,
+			);
+			name = "Pods-Unsplash-UnsplashUITests";
+			path = "Target Support Files/Pods-Unsplash-UnsplashUITests";
+			sourceTree = "<group>";
+		};
+		55137B4600DACA0E9E09E1838EAC13F3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				45437B434C00FCEC13D2DA8C7EBEB3A6 /* Pods-Unsplash */,
+				47A48EFD414DBAE4F5EFEF7A1C6E17DF /* Pods-Unsplash-UnsplashUITests */,
+				B3F2D06E9BCD20CD35057E39D7B0A853 /* Pods-UnsplashTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		671BE5AFFC266CC07FA94F5AEA234610 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01F1518FE0398B0A883AC420738DE333 /* Pods_Unsplash.framework */,
+				280E74EEEBCF8D646B709FFEFBDF3B7C /* Pods_Unsplash_UnsplashUITests.framework */,
+				4042DA50E93E932FD8844C084673A896 /* Pods_UnsplashTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */,
+				7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D96179D43A67C5D5323B0682D32C133C /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B3F2D06E9BCD20CD35057E39D7B0A853 /* Pods-UnsplashTests */ = {
+			isa = PBXGroup;
+			children = (
+				F13F645652E5BEB09A8CD8FD992177F2 /* Pods-UnsplashTests.modulemap */,
+				CEBA45CF4941EDAF44DAA991E22D99B4 /* Pods-UnsplashTests-acknowledgements.markdown */,
+				8D2A1946DB4A15659C6E139478F4225E /* Pods-UnsplashTests-acknowledgements.plist */,
+				F33FC765038E563A143C7221C9963E38 /* Pods-UnsplashTests-dummy.m */,
+				69B8494D639CCC1326979FDAF369B0AE /* Pods-UnsplashTests-Info.plist */,
+				F5C63770DFBC599404948462B467AB98 /* Pods-UnsplashTests-umbrella.h */,
+				B0DEAF4D9BCBAA85AB573158791843C8 /* Pods-UnsplashTests.debug.xcconfig */,
+				1733702117F512EFDDCC3250560D88C2 /* Pods-UnsplashTests.release.xcconfig */,
+			);
+			name = "Pods-UnsplashTests";
+			path = "Target Support Files/Pods-UnsplashTests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				965877409E01FB3D85D85E90E6B30185 /* Pods */,
+				671BE5AFFC266CC07FA94F5AEA234610 /* Products */,
+				55137B4600DACA0E9E09E1838EAC13F3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D96179D43A67C5D5323B0682D32C133C /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
+				EC2F5B4F2666F8DD0071FF05 /* .swiftlint.yml */,
+			);
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3AB06C0DDBB3F7012A3599DD24DDFAA1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2872A06766F0EBD171625537EF9DF8A /* Pods-UnsplashTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7701214236FBB809B188D8B7F46E975F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FC522FD99E08D6DE38AD88305FB7931 /* Pods-Unsplash-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C16CEA7AB480A3839C4A574F4623FFB0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4595782957B5BE3144860DB3053A1251 /* Pods-Unsplash-UnsplashUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		412AE95CD21737CC5C6E0D6692C95A39 /* Pods-Unsplash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEC762A2C8810B05F2DECF822750887C /* Build configuration list for PBXNativeTarget "Pods-Unsplash" */;
+			buildPhases = (
+				7701214236FBB809B188D8B7F46E975F /* Headers */,
+				B459A8E2A1FDC3B1378273E89C0A67D7 /* Sources */,
+				CB536007B2B1B7DC9276DA7E5D16B4C3 /* Frameworks */,
+				F862CD30E7B68E6D0ED63F83D74EAA2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C5BC916A4AF882364858C959D1FED0E /* PBXTargetDependency */,
+			);
+			name = "Pods-Unsplash";
+			productName = "Pods-Unsplash";
+			productReference = 01F1518FE0398B0A883AC420738DE333 /* Pods_Unsplash.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		65E1BE02AD9E38BA74172D975655F471 /* Pods-UnsplashTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E9C87580DAAB5AA09EA491871E5E2E8 /* Build configuration list for PBXNativeTarget "Pods-UnsplashTests" */;
+			buildPhases = (
+				3AB06C0DDBB3F7012A3599DD24DDFAA1 /* Headers */,
+				7B9F7859C58D2AE55276E878DF3F2B4D /* Sources */,
+				9507CF3ACA46E97FA680861C50884AD5 /* Frameworks */,
+				F3F52C75DB6609CF90D46183AC97FB42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A50AA1D7FE2C3DC22479DDCF69239E56 /* PBXTargetDependency */,
+			);
+			name = "Pods-UnsplashTests";
+			productName = "Pods-UnsplashTests";
+			productReference = 4042DA50E93E932FD8844C084673A896 /* Pods_UnsplashTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EA3B6617B5CC6DB0EF93E54FB82058C7 /* Pods-Unsplash-UnsplashUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA9BEA837E945C16502A97169CE17E19 /* Build configuration list for PBXNativeTarget "Pods-Unsplash-UnsplashUITests" */;
+			buildPhases = (
+				C16CEA7AB480A3839C4A574F4623FFB0 /* Headers */,
+				F5B4DE6A735EC8D67397561748B1D545 /* Sources */,
+				8F7D2511C54D467C3DAEE72CAD9C2370 /* Frameworks */,
+				0E29953FE1C345313A10A39EA3CE6CA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A0B307892FB1F2B24106ED7CA428923 /* PBXTargetDependency */,
+			);
+			name = "Pods-Unsplash-UnsplashUITests";
+			productName = "Pods-Unsplash-UnsplashUITests";
+			productReference = 280E74EEEBCF8D646B709FFEFBDF3B7C /* Pods_Unsplash_UnsplashUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1250;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 671BE5AFFC266CC07FA94F5AEA234610 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				412AE95CD21737CC5C6E0D6692C95A39 /* Pods-Unsplash */,
+				EA3B6617B5CC6DB0EF93E54FB82058C7 /* Pods-Unsplash-UnsplashUITests */,
+				65E1BE02AD9E38BA74172D975655F471 /* Pods-UnsplashTests */,
+				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E29953FE1C345313A10A39EA3CE6CA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3F52C75DB6609CF90D46183AC97FB42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F862CD30E7B68E6D0ED63F83D74EAA2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B9F7859C58D2AE55276E878DF3F2B4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2D953042B6F050FA78784ED5B543EB2 /* Pods-UnsplashTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B459A8E2A1FDC3B1378273E89C0A67D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				114BCCC09F34267EE579996C85EFD4AB /* Pods-Unsplash-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5B4DE6A735EC8D67397561748B1D545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39BE32CF52541E410055BE34377938E /* Pods-Unsplash-UnsplashUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C5BC916A4AF882364858C959D1FED0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 4F8E688C1D81E2D67456F76CB20EAB59 /* PBXContainerItemProxy */;
+		};
+		8A0B307892FB1F2B24106ED7CA428923 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 5AE925AF6B6D089B23A1CFCEE9EA1B2C /* PBXContainerItemProxy */;
+		};
+		A50AA1D7FE2C3DC22479DDCF69239E56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Unsplash";
+			target = 412AE95CD21737CC5C6E0D6692C95A39 /* Pods-Unsplash */;
+			targetProxy = 9E7FCCA75BA4ADCF99A1ACBF84FA0661 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1305A7F91580FFF075B3A3BCF51E1F11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D34159978D65B5F06D69729430CFA887 /* Pods-Unsplash-UnsplashUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		29F6808B6DB3571CA45846B68B784E24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADA043B488170A10152377A8F47F7168 /* Pods-Unsplash.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Unsplash/Pods-Unsplash-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Unsplash/Pods-Unsplash.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3036A03D856C1BFE5F864089C6D75784 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D502E528BD3450ED745AD666510B7C9 /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4819F96779E664C82400004161AC3C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1733702117F512EFDDCC3250560D88C2 /* Pods-UnsplashTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-UnsplashTests/Pods-UnsplashTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UnsplashTests/Pods-UnsplashTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A825D1AB16B6B3F1C75E989325245E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DF381B98733686C47B142D4CCBA8FA /* Pods-Unsplash.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Unsplash/Pods-Unsplash-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Unsplash/Pods-Unsplash.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		DF23CA1DD87164A61F1BFF4E7D3BCAC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0DEAF4D9BCBAA85AB573158791843C8 /* Pods-UnsplashTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-UnsplashTests/Pods-UnsplashTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UnsplashTests/Pods-UnsplashTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E9C87580DAAB5AA09EA491871E5E2E8 /* Build configuration list for PBXNativeTarget "Pods-UnsplashTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF23CA1DD87164A61F1BFF4E7D3BCAC4 /* Debug */,
+				4819F96779E664C82400004161AC3C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC01E0B73776AF6B58DC318A9BE988D7 /* Debug */,
+				C605C363CC9F26F9FF97DBB1D5C6E25C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */,
+				AD81E62ACCB0B7A923FC8AA288F9921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA9BEA837E945C16502A97169CE17E19 /* Build configuration list for PBXNativeTarget "Pods-Unsplash-UnsplashUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3036A03D856C1BFE5F864089C6D75784 /* Debug */,
+				1305A7F91580FFF075B3A3BCF51E1F11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEC762A2C8810B05F2DECF822750887C /* Build configuration list for PBXNativeTarget "Pods-Unsplash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29F6808B6DB3571CA45846B68B784E24 /* Debug */,
+				A825D1AB16B6B3F1C75E989325245E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
