@@ -30,6 +30,10 @@
 		EC6D717E26664EFB0037DC6A /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D717D26664EFB0037DC6A /* APIProvider.swift */; };
 		EC94B5D326683BC100F71C22 /* PhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94B5D226683BC100F71C22 /* PhotoURL.swift */; };
 		EC94B5D7266844EB00F71C22 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94B5D6266844EB00F71C22 /* Server.swift */; };
+		ECEDB15E2668FD310052B930 /* PhotosListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB15D2668FD310052B930 /* PhotosListManagerTests.swift */; };
+		ECEDB1602668FE840052B930 /* APIProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB15F2668FE840052B930 /* APIProviderProtocol.swift */; };
+		ECEDB163266906460052B930 /* APIProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB162266906460052B930 /* APIProviderMock.swift */; };
+		ECEDB165266906890052B930 /* PhotosListManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB164266906880052B930 /* PhotosListManagerMock.swift */; };
 		F2AC0617B782A477A587AE57 /* Pods_UnsplashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BE93A3E2F1EC1567DA73AD /* Pods_UnsplashTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +90,10 @@
 		EC6D717D26664EFB0037DC6A /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		EC94B5D226683BC100F71C22 /* PhotoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoURL.swift; sourceTree = "<group>"; };
 		EC94B5D6266844EB00F71C22 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		ECEDB15D2668FD310052B930 /* PhotosListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListManagerTests.swift; sourceTree = "<group>"; };
+		ECEDB15F2668FE840052B930 /* APIProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderProtocol.swift; sourceTree = "<group>"; };
+		ECEDB162266906460052B930 /* APIProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderMock.swift; sourceTree = "<group>"; };
+		ECEDB164266906880052B930 /* PhotosListManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListManagerMock.swift; sourceTree = "<group>"; };
 		F20193EEA76174771D5E2636 /* Pods_Unsplash_UnsplashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash_UnsplashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -176,6 +184,7 @@
 		EC6D7146266642EE0037DC6A /* UnsplashTests */ = {
 			isa = PBXGroup;
 			children = (
+				ECEDB161266906320052B930 /* APIProviderMock */,
 				EC6D71612666452E0037DC6A /* PhotosList */,
 				EC6D7149266642EE0037DC6A /* Info.plist */,
 			);
@@ -205,7 +214,8 @@
 		EC6D71612666452E0037DC6A /* PhotosList */ = {
 			isa = PBXGroup;
 			children = (
-				EC6D71622666457B0037DC6A /* PhotosListViewModelTests.swift */,
+				ECEDB15C2668FD1A0052B930 /* Manager */,
+				EC94B5D82668475C00F71C22 /* ViewModel */,
 			);
 			path = PhotosList;
 			sourceTree = "<group>";
@@ -307,8 +317,34 @@
 				EC6D717D26664EFB0037DC6A /* APIProvider.swift */,
 				EC2F5B522666FBEC0071FF05 /* APIResponseError.swift */,
 				EC94B5D6266844EB00F71C22 /* Server.swift */,
+				ECEDB15F2668FE840052B930 /* APIProviderProtocol.swift */,
 			);
 			path = "API Provider";
+			sourceTree = "<group>";
+		};
+		EC94B5D82668475C00F71C22 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EC6D71622666457B0037DC6A /* PhotosListViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ECEDB15C2668FD1A0052B930 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				ECEDB15D2668FD310052B930 /* PhotosListManagerTests.swift */,
+				ECEDB164266906880052B930 /* PhotosListManagerMock.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		ECEDB161266906320052B930 /* APIProviderMock */ = {
+			isa = PBXGroup;
+			children = (
+				ECEDB162266906460052B930 /* APIProviderMock.swift */,
+			);
+			path = APIProviderMock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -543,6 +579,7 @@
 				EC6D716D266646FB0037DC6A /* PhotosListViewModelProtocol.swift in Sources */,
 				EC6D7133266642EC0037DC6A /* SceneDelegate.swift in Sources */,
 				EC94B5D7266844EB00F71C22 /* Server.swift in Sources */,
+				ECEDB1602668FE840052B930 /* APIProviderProtocol.swift in Sources */,
 				EC94B5D326683BC100F71C22 /* PhotoURL.swift in Sources */,
 				EC6D717726664CFC0037DC6A /* PhotosListOperation.swift in Sources */,
 				EC6D717E26664EFB0037DC6A /* APIProvider.swift in Sources */,
@@ -554,7 +591,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECEDB165266906890052B930 /* PhotosListManagerMock.swift in Sources */,
+				ECEDB15E2668FD310052B930 /* PhotosListManagerTests.swift in Sources */,
 				EC6D71632666457B0037DC6A /* PhotosListViewModelTests.swift in Sources */,
+				ECEDB163266906460052B930 /* APIProviderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@ import Foundation
 
 typealias NetworkCompletion<T: Decodable> = (() throws ->  T) -> Void
 
-struct APIProvider {
+struct APIProvider: APIProviderProtocol {
 
     // MARK: - Public Methods
 

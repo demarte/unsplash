@@ -22,3 +22,15 @@ struct PhotoURL: Codable {
         case thumb
     }
 }
+
+// MARK: - Fixture
+
+extension PhotoURL {
+    static func fixture(raw: String? = nil,
+                        full: String? = nil,
+                        regular: String? = nil,
+                        small: String? = nil,
+                        thumb: String? = nil) -> PhotoURL {
+        return PhotoURL(raw: raw, full: full, regular: regular, small: small, thumb: thumb)
+    }
+}

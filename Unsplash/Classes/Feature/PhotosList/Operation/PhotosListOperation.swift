@@ -18,12 +18,12 @@ class PhotosListOperation: AsyncOperation {
 
     // MARK: - Properties
 
-    private let provider: APIProvider
+    private let provider: APIProviderProtocol
     private let completion: FetchPhotosCompletion<[Photo]>
 
     // MARK: - Initializer
 
-    init(provider: APIProvider = APIProvider(), completion: @escaping FetchPhotosCompletion<[Photo]>) {
+    init(provider: APIProviderProtocol = APIProvider(), completion: @escaping FetchPhotosCompletion<[Photo]>) {
         self.provider = provider
         self.completion = completion
         super.init()

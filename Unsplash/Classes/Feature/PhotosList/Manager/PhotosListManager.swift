@@ -11,10 +11,20 @@ typealias FetchPhotosCompletion<T: Decodable> = (Result<T, APIResponseError>) ->
 
 class PhotosListManager: OperationQueue, PhotosListManagerProtocol {
 
+    // MARK: - Private Properties
+
+    private let provider: APIProviderProtocol
+
+    // MARK: - Initializer
+
+    init(provider: APIProviderProtocol = APIProvider()) {
+        self.provider = provider
+    }
+
     // MARK: - Public Methods
 
     func fetch(completion: @escaping FetchPhotosCompletion<[Photo]>) {
-        let fetchOperation = PhotosListOperation(completion: completion)
+        let fetchOperation = PhotosListOperation(provider: provider, completion: completion)
         addOperation(fetchOperation)
     }
 }
