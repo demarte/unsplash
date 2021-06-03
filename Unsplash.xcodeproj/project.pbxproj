@@ -15,8 +15,6 @@
 		EC2F5B57266700060071FF05 /* PhotosListManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F5B56266700060071FF05 /* PhotosListManagerProtocol.swift */; };
 		EC6D7131266642EC0037DC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7130266642EC0037DC6A /* AppDelegate.swift */; };
 		EC6D7133266642EC0037DC6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7132266642EC0037DC6A /* SceneDelegate.swift */; };
-		EC6D7135266642EC0037DC6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7134266642EC0037DC6A /* ViewController.swift */; };
-		EC6D7138266642EC0037DC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC6D7136266642EC0037DC6A /* Main.storyboard */; };
 		EC6D713A266642ED0037DC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC6D7139266642ED0037DC6A /* Assets.xcassets */; };
 		EC6D713D266642ED0037DC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC6D713B266642ED0037DC6A /* LaunchScreen.storyboard */; };
 		EC6D7153266642EE0037DC6A /* UnsplashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7152266642EE0037DC6A /* UnsplashUITests.swift */; };
@@ -34,6 +32,10 @@
 		ECEDB1602668FE840052B930 /* APIProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB15F2668FE840052B930 /* APIProviderProtocol.swift */; };
 		ECEDB163266906460052B930 /* APIProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB162266906460052B930 /* APIProviderMock.swift */; };
 		ECEDB165266906890052B930 /* PhotosListManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB164266906880052B930 /* PhotosListManagerMock.swift */; };
+		ECEF02062669207C002FA5A3 /* PhotosListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF02052669207C002FA5A3 /* PhotosListCoordinator.swift */; };
+		ECEF020A266920D4002FA5A3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF0209266920D4002FA5A3 /* Coordinator.swift */; };
+		ECEF020F266928A2002FA5A3 /* PhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF020E266928A2002FA5A3 /* PhotosListViewController.swift */; };
+		ECEF021226692944002FA5A3 /* PhotosListCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021126692944002FA5A3 /* PhotosListCoordinatorTests.swift */; };
 		F2AC0617B782A477A587AE57 /* Pods_UnsplashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BE93A3E2F1EC1567DA73AD /* Pods_UnsplashTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +72,6 @@
 		EC6D712D266642EC0037DC6A /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6D7130266642EC0037DC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC6D7132266642EC0037DC6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EC6D7134266642EC0037DC6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EC6D7137266642EC0037DC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC6D7139266642ED0037DC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC6D713C266642ED0037DC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC6D713E266642ED0037DC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +94,10 @@
 		ECEDB15F2668FE840052B930 /* APIProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderProtocol.swift; sourceTree = "<group>"; };
 		ECEDB162266906460052B930 /* APIProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderMock.swift; sourceTree = "<group>"; };
 		ECEDB164266906880052B930 /* PhotosListManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListManagerMock.swift; sourceTree = "<group>"; };
+		ECEF02052669207C002FA5A3 /* PhotosListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCoordinator.swift; sourceTree = "<group>"; };
+		ECEF0209266920D4002FA5A3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		ECEF020E266928A2002FA5A3 /* PhotosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewController.swift; sourceTree = "<group>"; };
+		ECEF021126692944002FA5A3 /* PhotosListCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCoordinatorTests.swift; sourceTree = "<group>"; };
 		F20193EEA76174771D5E2636 /* Pods_Unsplash_UnsplashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash_UnsplashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -176,7 +180,6 @@
 				EC2F5B502666F98B0071FF05 /* .swiftlint.yml */,
 				EC6D71672666466D0037DC6A /* Resources */,
 				EC6D7166266646650037DC6A /* Classes */,
-				EC6D7136266642EC0037DC6A /* Main.storyboard */,
 			);
 			path = Unsplash;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 		EC6D71612666452E0037DC6A /* PhotosList */ = {
 			isa = PBXGroup;
 			children = (
+				ECEF021026692929002FA5A3 /* Coordinator */,
 				ECEDB15C2668FD1A0052B930 /* Manager */,
 				EC94B5D82668475C00F71C22 /* ViewModel */,
 			);
@@ -224,11 +228,12 @@
 			isa = PBXGroup;
 			children = (
 				EC6D717426664CAB0037DC6A /* Business */,
+				ECEF02042669202C002FA5A3 /* Coordinator */,
 				EC6D717326664C9C0037DC6A /* Manager */,
 				EC6D716E266647580037DC6A /* Model */,
 				EC6D717526664CB40037DC6A /* Operation */,
+				ECEF020B2669221C002FA5A3 /* ViewController */,
 				EC6D7168266646B10037DC6A /* ViewModel */,
-				EC6D7134266642EC0037DC6A /* ViewController.swift */,
 			);
 			path = PhotosList;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 		EC6D7166266646650037DC6A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				ECEF0208266920B6002FA5A3 /* Extensions */,
 				EC6D717826664D440037DC6A /* Utils */,
 				EC6D7160266643030037DC6A /* Supporting Files */,
 				EC6D7165266646550037DC6A /* Feature */,
@@ -304,6 +310,7 @@
 		EC6D717826664D440037DC6A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				ECEF020726692099002FA5A3 /* Coordinator */,
 				EC6D717F26664F290037DC6A /* API Provider */,
 				EC6D717926664D660037DC6A /* AsyncOperation.swift */,
 				EC6D717B26664D980037DC6A /* Dynamic.swift */,
@@ -345,6 +352,45 @@
 				ECEDB162266906460052B930 /* APIProviderMock.swift */,
 			);
 			path = APIProviderMock;
+			sourceTree = "<group>";
+		};
+		ECEF02042669202C002FA5A3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				ECEF02052669207C002FA5A3 /* PhotosListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		ECEF020726692099002FA5A3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				ECEF0209266920D4002FA5A3 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		ECEF0208266920B6002FA5A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ECEF020B2669221C002FA5A3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ECEF020E266928A2002FA5A3 /* PhotosListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ECEF021026692929002FA5A3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				ECEF021126692944002FA5A3 /* PhotosListCoordinatorTests.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,7 +503,6 @@
 				EC2F5B512666F98B0071FF05 /* .swiftlint.yml in Resources */,
 				EC6D713D266642ED0037DC6A /* LaunchScreen.storyboard in Resources */,
 				EC6D713A266642ED0037DC6A /* Assets.xcassets in Resources */,
-				EC6D7138266642EC0037DC6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,15 +616,17 @@
 				EC2F5B57266700060071FF05 /* PhotosListManagerProtocol.swift in Sources */,
 				EC2F5B532666FBEC0071FF05 /* APIResponseError.swift in Sources */,
 				EC2F5B552666FFF40071FF05 /* PhotosListManager.swift in Sources */,
+				ECEF02062669207C002FA5A3 /* PhotosListCoordinator.swift in Sources */,
 				EC6D7170266648080037DC6A /* Photo.swift in Sources */,
 				EC6D717C26664D980037DC6A /* Dynamic.swift in Sources */,
-				EC6D7135266642EC0037DC6A /* ViewController.swift in Sources */,
 				EC6D716A266646C40037DC6A /* PhotosListViewModel.swift in Sources */,
+				ECEF020A266920D4002FA5A3 /* Coordinator.swift in Sources */,
 				EC6D7131266642EC0037DC6A /* AppDelegate.swift in Sources */,
 				EC6D716D266646FB0037DC6A /* PhotosListViewModelProtocol.swift in Sources */,
 				EC6D7133266642EC0037DC6A /* SceneDelegate.swift in Sources */,
 				EC94B5D7266844EB00F71C22 /* Server.swift in Sources */,
 				ECEDB1602668FE840052B930 /* APIProviderProtocol.swift in Sources */,
+				ECEF020F266928A2002FA5A3 /* PhotosListViewController.swift in Sources */,
 				EC94B5D326683BC100F71C22 /* PhotoURL.swift in Sources */,
 				EC6D717726664CFC0037DC6A /* PhotosListOperation.swift in Sources */,
 				EC6D717E26664EFB0037DC6A /* APIProvider.swift in Sources */,
@@ -591,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECEF021226692944002FA5A3 /* PhotosListCoordinatorTests.swift in Sources */,
 				ECEDB165266906890052B930 /* PhotosListManagerMock.swift in Sources */,
 				ECEDB15E2668FD310052B930 /* PhotosListManagerTests.swift in Sources */,
 				EC6D71632666457B0037DC6A /* PhotosListViewModelTests.swift in Sources */,
@@ -622,14 +670,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EC6D7136266642EC0037DC6A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC6D7137266642EC0037DC6A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EC6D713B266642ED0037DC6A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
