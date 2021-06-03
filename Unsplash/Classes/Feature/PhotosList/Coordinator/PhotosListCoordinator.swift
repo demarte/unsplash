@@ -23,7 +23,10 @@ class PhotosListCoordinator: Coordinator {
     // MARK: - Methods
 
     func start() {
-        let viewController = PhotosListViewController()
+        let viewModel = PhotosListViewModel()
+        let viewController = PhotosListViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: false)
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.title = "Unsplash"
     }
 }

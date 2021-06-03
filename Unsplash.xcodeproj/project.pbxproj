@@ -36,6 +36,8 @@
 		ECEF020A266920D4002FA5A3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF0209266920D4002FA5A3 /* Coordinator.swift */; };
 		ECEF020F266928A2002FA5A3 /* PhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF020E266928A2002FA5A3 /* PhotosListViewController.swift */; };
 		ECEF021226692944002FA5A3 /* PhotosListCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021126692944002FA5A3 /* PhotosListCoordinatorTests.swift */; };
+		ECEF021426695825002FA5A3 /* UICollectionViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021326695825002FA5A3 /* UICollectionViewCell+Identifier.swift */; };
+		ECEF021726695D34002FA5A3 /* PhotosListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021626695D34002FA5A3 /* PhotosListCell.swift */; };
 		F2AC0617B782A477A587AE57 /* Pods_UnsplashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BE93A3E2F1EC1567DA73AD /* Pods_UnsplashTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,8 @@
 		ECEF0209266920D4002FA5A3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ECEF020E266928A2002FA5A3 /* PhotosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewController.swift; sourceTree = "<group>"; };
 		ECEF021126692944002FA5A3 /* PhotosListCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCoordinatorTests.swift; sourceTree = "<group>"; };
+		ECEF021326695825002FA5A3 /* UICollectionViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Identifier.swift"; sourceTree = "<group>"; };
+		ECEF021626695D34002FA5A3 /* PhotosListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCell.swift; sourceTree = "<group>"; };
 		F20193EEA76174771D5E2636 /* Pods_Unsplash_UnsplashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash_UnsplashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -232,6 +236,7 @@
 				EC6D717326664C9C0037DC6A /* Manager */,
 				EC6D716E266647580037DC6A /* Model */,
 				EC6D717526664CB40037DC6A /* Operation */,
+				ECEF021526695D0A002FA5A3 /* View */,
 				ECEF020B2669221C002FA5A3 /* ViewController */,
 				EC6D7168266646B10037DC6A /* ViewModel */,
 			);
@@ -373,6 +378,7 @@
 		ECEF0208266920B6002FA5A3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ECEF021326695825002FA5A3 /* UICollectionViewCell+Identifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,6 +397,14 @@
 				ECEF021126692944002FA5A3 /* PhotosListCoordinatorTests.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		ECEF021526695D0A002FA5A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECEF021626695D34002FA5A3 /* PhotosListCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -613,10 +627,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECEF021726695D34002FA5A3 /* PhotosListCell.swift in Sources */,
 				EC2F5B57266700060071FF05 /* PhotosListManagerProtocol.swift in Sources */,
 				EC2F5B532666FBEC0071FF05 /* APIResponseError.swift in Sources */,
 				EC2F5B552666FFF40071FF05 /* PhotosListManager.swift in Sources */,
 				ECEF02062669207C002FA5A3 /* PhotosListCoordinator.swift in Sources */,
+				ECEF021426695825002FA5A3 /* UICollectionViewCell+Identifier.swift in Sources */,
 				EC6D7170266648080037DC6A /* Photo.swift in Sources */,
 				EC6D717C26664D980037DC6A /* Dynamic.swift in Sources */,
 				EC6D716A266646C40037DC6A /* PhotosListViewModel.swift in Sources */,
