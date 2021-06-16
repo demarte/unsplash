@@ -6,15 +6,14 @@
 //
 
 import Foundation
-
-typealias PhotoDetailCompletion = (Result<Photo, APIResponseError>) -> Void
+import UIKit
 
 class PhotoDetailManager: OperationQueue, PhotoDetailManagerProtocol {
 
     // MARK: - Public Properties
 
-    func fetchPhotoDetails(photoId: String, completion: @escaping PhotoDetailCompletion) {
-        let operation = PhotoDetailOperation(photoId: photoId, completion: completion)
+    func fetchPhotoDetails(photoURL: String, completion: @escaping FetchImageCompletion) {
+        let operation = FetchImageOperation(urlString: photoURL, completion: completion)
         addOperation(operation)
     }
 }

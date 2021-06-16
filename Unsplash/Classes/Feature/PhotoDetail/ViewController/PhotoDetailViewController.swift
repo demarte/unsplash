@@ -13,10 +13,42 @@ class PhotoDetailViewController: UIViewController {
 
     private let viewModel: PhotoDetailViewModelProtocol?
 
+    private lazy var activityView: UIActivityIndicatorView = {
+        let activityView = UIActivityIndicatorView(style: .large)
+        activityView.color = .lightGray
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        return activityView
+    }()
+
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.delegate = self
+        return scrollView
+    }()
+
+    private var imageViewTopConstraint: NSLayoutConstraint?
+    private var imageViewBottomConstraint: NSLayoutConstraint?
+    private var imageViewLeadingConstraint: NSLayoutConstraint?
+    private var imageViewTrailingConstraint: NSLayoutConstraint?
+
+    // MARK: - Override
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
         viewModel?.fetchPhotoDetails()
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        updateMinZoomScaleForSize(view.bounds.size)
     }
 
     // MARK: - Initializer
@@ -33,22 +65,118 @@ class PhotoDetailViewController: UIViewController {
         finishInit()
     }
 
+    // MARK: - Private Methods
+
     private func finishInit() {
+        setUpView()
         bindElements()
+        setUpScrollViewConstraints()
+        setUpImageViewConstraints()
+    }
+
+    private func setUpView() {
+        view.backgroundColor = .systemBackground
+        view.addSubview(scrollView)
+        view.addSubview(activityView)
+        scrollView.addSubview(imageView)
     }
 
     private func bindElements() {
         viewModel?.state.bind { state in
             DispatchQueue.main.async {
                 switch state {
-                case .loaded(let photo):
-                    print(photo)
+                case .loaded(let image):
+                    self.handleLoaded(with: image)
                 case .loading:
-                    print("loading")
-                case .error(let error):
-                    print("error: \(error.localizedDescription)")
+                    self.handleLoading()
+                case .error:
+                    print("error")
                 }
             }
         }
+    }
+
+    private func setUpScrollViewConstraints() {
+        NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .zero),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: .zero),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8.0),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0),
+            activityView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+
+    private func setUpImageViewConstraints() {
+        imageViewTopConstraint = imageView.topAnchor.constraint(equalTo: scrollView.topAnchor)
+        imageViewBottomConstraint = imageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+        imageViewLeadingConstraint = imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor)
+        imageViewTrailingConstraint = imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
+
+        NSLayoutConstraint.activate([
+            imageViewTopConstraint ?? NSLayoutConstraint(),
+            imageViewBottomConstraint ?? NSLayoutConstraint(),
+            imageViewLeadingConstraint ?? NSLayoutConstraint(),
+            imageViewTrailingConstraint ?? NSLayoutConstraint()
+        ])
+    }
+
+    private func handleLoading() {
+        activityView.startAnimating()
+        activityView.isHidden = false
+    }
+
+    private func handleLoaded(with image: UIImage?) {
+        activityView.stopAnimating()
+        activityView.isHidden = true
+        imageView.image = image
+        imageView.sizeToFit()
+        setUpScrollView()
+    }
+
+    private func setUpScrollView() {
+        let gesture = UITapGestureRecognizer()
+        gesture.numberOfTapsRequired = 2
+        gesture.addTarget(self, action: #selector(handleDoubleTap))
+        scrollView.contentSize = imageView.frame.size
+        scrollView.addGestureRecognizer(gesture)
+    }
+
+    @objc
+    private func handleDoubleTap() {
+        scrollView.zoom(to: imageView.bounds, animated: true)
+    }
+
+    private func updateMinZoomScaleForSize(_ size: CGSize) {
+        let widthScale = size.width / imageView.bounds.width
+        let heightScale = size.height / imageView.bounds.height
+        let minScale = min(widthScale, heightScale)
+
+        scrollView.minimumZoomScale = minScale
+        scrollView.zoomScale = minScale
+    }
+
+    private func updateConstraints(for size: CGSize) {
+        let yOffset = max(.zero, (size.height - imageView.frame.height) / 2)
+        imageViewTopConstraint?.constant = yOffset
+        imageViewBottomConstraint?.constant = yOffset
+
+        let xOffset = max(.zero, (size.width - imageView.frame.width) / 2)
+        imageViewLeadingConstraint?.constant = xOffset
+        imageViewTrailingConstraint?.constant = xOffset
+        view.layoutIfNeeded()
+    }
+}
+
+// MARK: - ScrollView Delegate
+
+extension PhotoDetailViewController: UIScrollViewDelegate {
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        updateConstraints(for: view.bounds.size)
     }
 }

@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 enum PhotoDetailViewModelState {
     case loading
-    case loaded(Photo)
-    case error(APIResponseError)
+    case loaded(UIImage?)
+    case error
 }
 
 class PhotoDetailViewModel: PhotoDetailViewModelProtocol {
@@ -22,25 +23,25 @@ class PhotoDetailViewModel: PhotoDetailViewModelProtocol {
     // MARK: - Private Properties
 
     private let manager: PhotoDetailManagerProtocol
-    private let photoId: String
+    private let photo: Photo
 
     // MARK: - Initializer
 
-    init(photoId: String, manager: PhotoDetailManagerProtocol = PhotoDetailManager()) {
+    init(photo: Photo, manager: PhotoDetailManagerProtocol = PhotoDetailManager()) {
         self.manager = manager
-        self.photoId = photoId
+        self.photo = photo
     }
 
     // MARK: Public Methods
 
     func fetchPhotoDetails() {
-        manager.fetchPhotoDetails(photoId: photoId) { [weak self] result in
+        guard let url = photo.urls?.full else { return }
+        manager.fetchPhotoDetails(photoURL: url) { [weak self] result in
             guard let self = self else { return }
-            switch result {
-            case .success(let photo):
-                self.state.value = .loaded(photo)
-            case .failure(let error):
-                self.state.value = .error(error)
+            if let image = result {
+                self.state.value = .loaded(image)
+            } else {
+                self.state.value = .error
             }
         }
     }

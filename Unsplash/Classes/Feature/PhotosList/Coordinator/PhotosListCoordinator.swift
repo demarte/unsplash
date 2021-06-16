@@ -35,9 +35,9 @@ class PhotosListCoordinator: Coordinator {
 extension PhotosListCoordinator {
 
     func showDetails(for photo: Photo) {
-        let viewModel = PhotoDetailViewModel(photoId: photo.id ?? String())
+        let viewModel = PhotoDetailViewModel(photo: photo)
         let viewController = PhotoDetailViewController(viewModel: viewModel)
-        viewController.navigationItem.title = photo.altDescription ?? "Photo"
+        viewController.navigationItem.title = photo.description ?? "Photo"
         navigationController.pushViewController(viewController, animated: true)
     }
 }

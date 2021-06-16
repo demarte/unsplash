@@ -9,5 +9,5 @@ import Foundation
 
 protocol PhotoDetailManagerProtocol {
 
-    func fetchPhotoDetails(photoId: String, completion: @escaping PhotoDetailCompletion)
+    func fetchPhotoDetails(photoURL: String, completion: @escaping FetchImageCompletion)
 }

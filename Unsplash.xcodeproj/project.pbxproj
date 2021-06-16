@@ -46,7 +46,6 @@
 		ECEF022626696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF022526696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift */; };
 		ECEF022926696D59002FA5A3 /* PhotoDetailManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF022826696D59002FA5A3 /* PhotoDetailManagerProtocol.swift */; };
 		ECEF022B26696D92002FA5A3 /* PhotoDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF022A26696D92002FA5A3 /* PhotoDetailManager.swift */; };
-		ECEF022E26696E40002FA5A3 /* PhotoDetailOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF022D26696E40002FA5A3 /* PhotoDetailOperation.swift */; };
 		F2AC0617B782A477A587AE57 /* Pods_UnsplashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BE93A3E2F1EC1567DA73AD /* Pods_UnsplashTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,7 +118,6 @@
 		ECEF022526696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		ECEF022826696D59002FA5A3 /* PhotoDetailManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManagerProtocol.swift; sourceTree = "<group>"; };
 		ECEF022A26696D92002FA5A3 /* PhotoDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManager.swift; sourceTree = "<group>"; };
-		ECEF022D26696E40002FA5A3 /* PhotoDetailOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailOperation.swift; sourceTree = "<group>"; };
 		F20193EEA76174771D5E2636 /* Pods_Unsplash_UnsplashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash_UnsplashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -432,7 +430,6 @@
 		ECEF021E266969D1002FA5A3 /* PhotoDetail */ = {
 			isa = PBXGroup;
 			children = (
-				ECEF022C26696E28002FA5A3 /* Operation */,
 				ECEF022726696D44002FA5A3 /* Manager */,
 				ECEF022226696BCF002FA5A3 /* ViewModel */,
 				ECEF0221266969F5002FA5A3 /* ViewController */,
@@ -464,14 +461,6 @@
 				ECEF022A26696D92002FA5A3 /* PhotoDetailManager.swift */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		ECEF022C26696E28002FA5A3 /* Operation */ = {
-			isa = PBXGroup;
-			children = (
-				ECEF022D26696E40002FA5A3 /* PhotoDetailOperation.swift */,
-			);
-			path = Operation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -722,7 +711,6 @@
 				EC6D717726664CFC0037DC6A /* PhotosListOperation.swift in Sources */,
 				EC6D717E26664EFB0037DC6A /* APIProvider.swift in Sources */,
 				EC6D717A26664D660037DC6A /* AsyncOperation.swift in Sources */,
-				ECEF022E26696E40002FA5A3 /* PhotoDetailOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
