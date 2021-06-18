@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+    <array>
+        <string>NewYork.ttf</string>
+        <string>NewYorkMedium-Bold.otf</string>
+        <string>NewYorkMedium-Regular.otf</string>
+        <string>NewYorkMedium-Semibold.otf</string>
+    </array>
 	<key>API Key</key>
 	<string>4v32RoYn9h1F9ezi7QOZp1MtnmgDxDesHtab34J8DI0</string>
 	<key>CFBundleDevelopmentRegion</key>

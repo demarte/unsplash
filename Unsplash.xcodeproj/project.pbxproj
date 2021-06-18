@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D76EE7DB2AA440C238342F2 /* Pods_Unsplash_UnsplashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20193EEA76174771D5E2636 /* Pods_Unsplash_UnsplashUITests.framework */; };
-		AAB0477735D84B4A03AF78A7 /* Pods_Unsplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6761BD417C9CC1D3CE57AD32 /* Pods_Unsplash.framework */; };
 		EC2F5B512666F98B0071FF05 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EC2F5B502666F98B0071FF05 /* .swiftlint.yml */; };
 		EC2F5B532666FBEC0071FF05 /* APIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F5B522666FBEC0071FF05 /* APIResponseError.swift */; };
 		EC2F5B552666FFF40071FF05 /* PhotosListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F5B542666FFF40071FF05 /* PhotosListManager.swift */; };
@@ -19,6 +18,12 @@
 		EC3E7C74267BF2A400B806AE /* PhotosListBusinessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E7C73267BF2A400B806AE /* PhotosListBusinessMock.swift */; };
 		EC3E7C78267BF31000B806AE /* PhotoDetailManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E7C77267BF31000B806AE /* PhotoDetailManagerTests.swift */; };
 		EC3E7C7B267BF67D00B806AE /* PhotoDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E7C7A267BF67D00B806AE /* PhotoDetailViewModelTests.swift */; };
+		EC67916E267CCF14002527DC /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC67916D267CCF14002527DC /* UIFont.swift */; };
+		EC679170267CD607002527DC /* NewYorkMedium-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC67916F267CD607002527DC /* NewYorkMedium-Bold.otf */; };
+		EC679172267CD63E002527DC /* NewYorkMedium-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC679171267CD63E002527DC /* NewYorkMedium-Regular.otf */; };
+		EC679174267CD64E002527DC /* NewYorkMedium-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC679173267CD64E002527DC /* NewYorkMedium-Semibold.otf */; };
+		EC679176267CDEAB002527DC /* NewYork.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC679175267CDEAB002527DC /* NewYork.ttf */; };
+		EC6791BE267CEF11002527DC /* Pods_Unsplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6761BD417C9CC1D3CE57AD32 /* Pods_Unsplash.framework */; };
 		EC6D7131266642EC0037DC6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7130266642EC0037DC6A /* AppDelegate.swift */; };
 		EC6D7133266642EC0037DC6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D7132266642EC0037DC6A /* SceneDelegate.swift */; };
 		EC6D713A266642ED0037DC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC6D7139266642ED0037DC6A /* Assets.xcassets */; };
@@ -93,6 +98,11 @@
 		EC3E7C73267BF2A400B806AE /* PhotosListBusinessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListBusinessMock.swift; sourceTree = "<group>"; };
 		EC3E7C77267BF31000B806AE /* PhotoDetailManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManagerTests.swift; sourceTree = "<group>"; };
 		EC3E7C7A267BF67D00B806AE /* PhotoDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModelTests.swift; sourceTree = "<group>"; };
+		EC67916D267CCF14002527DC /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		EC67916F267CD607002527DC /* NewYorkMedium-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkMedium-Bold.otf"; sourceTree = "<group>"; };
+		EC679171267CD63E002527DC /* NewYorkMedium-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkMedium-Regular.otf"; sourceTree = "<group>"; };
+		EC679173267CD64E002527DC /* NewYorkMedium-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkMedium-Semibold.otf"; sourceTree = "<group>"; };
+		EC679175267CDEAB002527DC /* NewYork.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewYork.ttf; sourceTree = "<group>"; };
 		EC6D712D266642EC0037DC6A /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC6D7130266642EC0037DC6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC6D7132266642EC0037DC6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB0477735D84B4A03AF78A7 /* Pods_Unsplash.framework in Frameworks */,
+				EC6791BE267CEF11002527DC /* Pods_Unsplash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +231,17 @@
 				EC3E7C7A267BF67D00B806AE /* PhotoDetailViewModelTests.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC67910C267CCD44002527DC /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EC679175267CDEAB002527DC /* NewYork.ttf */,
+				EC679173267CD64E002527DC /* NewYorkMedium-Semibold.otf */,
+				EC679171267CD63E002527DC /* NewYorkMedium-Regular.otf */,
+				EC67916F267CD607002527DC /* NewYorkMedium-Bold.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		EC6D7124266642EC0037DC6A = {
@@ -335,6 +356,7 @@
 		EC6D71672666466D0037DC6A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EC67910C267CCD44002527DC /* fonts */,
 				EC6D7139266642ED0037DC6A /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -455,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				ECEF021326695825002FA5A3 /* UICollectionViewCell+Identifier.swift */,
+				EC67916D267CCF14002527DC /* UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -626,6 +649,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC679170267CD607002527DC /* NewYorkMedium-Bold.otf in Resources */,
+				EC679176267CDEAB002527DC /* NewYork.ttf in Resources */,
+				EC679172267CD63E002527DC /* NewYorkMedium-Regular.otf in Resources */,
+				EC679174267CD64E002527DC /* NewYorkMedium-Semibold.otf in Resources */,
 				EC2F5B512666F98B0071FF05 /* .swiftlint.yml in Resources */,
 				EC6D713D266642ED0037DC6A /* LaunchScreen.storyboard in Resources */,
 				EC6D713A266642ED0037DC6A /* Assets.xcassets in Resources */,
@@ -754,6 +781,7 @@
 				ECEF021D26696328002FA5A3 /* PhotosListCellViewModelProtocol.swift in Sources */,
 				ECEF022426696BE6002FA5A3 /* PhotoDetailViewModel.swift in Sources */,
 				EC6D716A266646C40037DC6A /* PhotosListViewModel.swift in Sources */,
+				EC67916E267CCF14002527DC /* UIFont.swift in Sources */,
 				ECEF020A266920D4002FA5A3 /* Coordinator.swift in Sources */,
 				EC6D7131266642EC0037DC6A /* AppDelegate.swift in Sources */,
 				EC6D716D266646FB0037DC6A /* PhotosListViewModelProtocol.swift in Sources */,
