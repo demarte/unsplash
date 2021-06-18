@@ -9,6 +9,13 @@ import UIKit
 
 class PhotosListViewController: UIViewController {
 
+    // MARK: - Constants
+
+    private enum Constants {
+        static let itemsPerRow: CGFloat = 3
+        static let sectionInsets = UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
+    }
+
     // MARK: - Public Properties
 
     var showDetails: ((Photo) -> Void)?
@@ -16,12 +23,6 @@ class PhotosListViewController: UIViewController {
     // MARK: - Private Properties
 
     private let viewModel: PhotosListViewModelProtocol?
-    private let sectionInsets = UIEdgeInsets(
-      top: 50.0,
-      left: 20.0,
-      bottom: 50.0,
-      right: 20.0)
-    private let itemsPerRow: CGFloat = 3
 
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
@@ -172,22 +173,22 @@ extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = Constants.sectionInsets.left * (Constants.itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
+        let widthPerItem = availableWidth / Constants.itemsPerRow
 
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return Constants.sectionInsets.left
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return Constants.sectionInsets.top
     }
 }

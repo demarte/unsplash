@@ -14,6 +14,8 @@ final class PhotosListOperation: AsyncOperation {
     private enum Constants {
         static let path: String = "photos"
         static let clientIdKey = "client_id"
+        static let pageKey = "per_page"
+        static let pageCount = "20"
     }
     // MARK: - Public Properties
 
@@ -51,7 +53,10 @@ final class PhotosListOperation: AsyncOperation {
         var url = Server.url
         url.appendPathComponent(Constants.path)
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
-        let queryItems = [URLQueryItem(name: Constants.clientIdKey, value: Server.apiKey)]
+        let queryItems = [
+            URLQueryItem(name: Constants.clientIdKey, value: Server.apiKey),
+            URLQueryItem(name: Constants.pageKey, value: Constants.pageCount)
+        ]
         urlComponents?.queryItems = queryItems
         let urlRequest = URLRequest(url: (urlComponents?.url)!)
 
