@@ -15,23 +15,33 @@ class PhotosListManager: OperationQueue, PhotosListManagerProtocol {
 
     // MARK: - Private Properties
 
-    private let provider: APIProviderProtocol
+    private var business: PhotosListBusinessProtocol
 
     // MARK: - Initializer
 
-    init(provider: APIProviderProtocol = APIProvider()) {
-        self.provider = provider
+    init(business: PhotosListBusinessProtocol = PhotosListBusiness()) {
+        self.business = business
     }
 
     // MARK: - Public Methods
 
     func fetch(completion: @escaping FetchPhotosCompletion<[Photo]>) {
-        let fetchOperation = PhotosListOperation(provider: provider, completion: completion)
+        let fetchOperation = PhotosListOperation(business: business)
+        fetchOperation.completionBlock = {
+            DispatchQueue.main.async {
+                completion(fetchOperation.photosListResult ?? .failure(.noData))
+            }
+        }
         addOperation(fetchOperation)
     }
 
     func fetchImage(by urlString: String, completion: @escaping FetchImageCompletion) {
-        let fetchImageOperation = FetchImageOperation(urlString: urlString, completion: completion)
+        let fetchImageOperation = FetchImageOperation(urlString: urlString, business: business)
+        fetchImageOperation.completionBlock = {
+            DispatchQueue.main.async {
+                completion(fetchImageOperation.image)
+            }
+        }
         addOperation(fetchImageOperation)
     }
 }

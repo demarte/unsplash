@@ -6,14 +6,20 @@
 //
 
 import Foundation
+import UIKit
 
 typealias NetworkCompletion<T: Decodable> = (() throws ->  T) -> Void
+typealias ImageNetworkCompletion = (UIImage?) -> Void
 
 struct APIProvider: APIProviderProtocol {
 
     // MARK: - Public Methods
 
-    func request<T: Decodable>(_ type: T.Type, urlRequest: URLRequest, completion: @escaping NetworkCompletion<T>) {
+    func request<T: Decodable>(_ type: T.Type, urlRequest: URLRequest?, completion: @escaping NetworkCompletion<T>) {
+        guard let urlRequest = urlRequest else {
+            completion { throw APIResponseError.noData }
+            return
+        }
         URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, _ in
             guard let response = urlResponse, let data = data else {
                 completion { throw APIResponseError.noData }
@@ -34,5 +40,15 @@ struct APIProvider: APIProviderProtocol {
             }
 
         }.resume()
+    }
+
+    func requestImage(from url: String, completion: @escaping ImageNetworkCompletion) {
+        guard let url = URL(string: url),
+              let data = try? Data(contentsOf: url),
+              let image = UIImage(data: data) else {
+            completion(nil)
+            return
+        }
+        completion(image)
     }
 }

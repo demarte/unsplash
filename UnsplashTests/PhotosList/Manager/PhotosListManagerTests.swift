@@ -10,20 +10,20 @@ import XCTest
 
 class PhotosListManagerTests: XCTestCase {
 
-    private var provider: APIProviderMock!
+    private var business: PhotosListBusinessMock!
     private var manager: PhotosListManagerProtocol!
 
     override func setUp() {
-        provider = APIProviderMock()
-        manager = PhotosListManager(provider: provider)
+        business = PhotosListBusinessMock()
+        manager = PhotosListManager(business: business)
     }
 
     override func tearDown() {
         manager = nil
-        provider = nil
+        business = nil
     }
 
-    func testFetchSuccess() {
+    func testFetchPhotosSuccess() {
         manager.fetch { result in
             switch result {
             case .success(let photos):
@@ -44,8 +44,8 @@ class PhotosListManagerTests: XCTestCase {
         }
     }
 
-    func testFetchFailure() {
-        provider.state = .error(.noData)
+    func testFetchPhotosFailure() {
+        business.state = .failure
         manager.fetch { result in
             switch result {
             case .success:
@@ -53,6 +53,19 @@ class PhotosListManagerTests: XCTestCase {
             case .failure(let error):
                 XCTAssertEqual(error, .noData)
             }
+        }
+    }
+
+    func testFetchImageSuccess() {
+        manager.fetchImage(by: String()) { image in
+            XCTAssertNotNil(image)
+        }
+    }
+
+    func testFetchImageFailure() {
+        business.state = .failure
+        manager.fetchImage(by: String()) { image in
+            XCTAssertNil(image)
         }
     }
 }

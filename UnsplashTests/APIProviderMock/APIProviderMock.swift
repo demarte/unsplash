@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 @testable import Unsplash
 
 class APIProviderMock: APIProviderProtocol {
@@ -17,17 +18,23 @@ class APIProviderMock: APIProviderProtocol {
 
     var state: State = .success
 
-    func request<T>(_ type: T.Type, urlRequest: URLRequest, completion: @escaping NetworkCompletion<T>) {
+    func request<T>(_ type: T.Type, urlRequest: URLRequest?, completion: @escaping NetworkCompletion<T>) {
         switch state {
         case .success:
-            completion {
-                guard let model = [Photo.fixture] as? T else {
-                    throw APIResponseError.noData
-                }
-                return model
-            }
+            let photo = Photo.fixture()
+            guard let model = [photo] as? T else { completion { throw APIResponseError.noData }; return }
+            completion { model }
         case .error(let error):
             completion { throw error }
+        }
+    }
+
+    func requestImage(from url: String, completion: @escaping ImageNetworkCompletion) {
+        switch state {
+        case .success:
+            completion(UIImage())
+        case .error:
+            completion(nil)
         }
     }
 }

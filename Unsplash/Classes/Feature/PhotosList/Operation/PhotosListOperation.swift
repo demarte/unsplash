@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PhotosListOperation: AsyncOperation {
+final class PhotosListOperation: AsyncOperation {
 
     // MARK: - Constants
 
@@ -15,17 +15,18 @@ class PhotosListOperation: AsyncOperation {
         static let path: String = "photos"
         static let clientIdKey = "client_id"
     }
+    // MARK: - Public Properties
 
-    // MARK: - Properties
+    var photosListResult: Result<[Photo], APIResponseError>?
 
-    private let provider: APIProviderProtocol
-    private let completion: FetchPhotosCompletion<[Photo]>
+    // MARK: - Private Properties
+
+    private let business: PhotosListBusinessProtocol
 
     // MARK: - Initializer
 
-    init(provider: APIProviderProtocol = APIProvider(), completion: @escaping FetchPhotosCompletion<[Photo]>) {
-        self.provider = provider
-        self.completion = completion
+    init(business: PhotosListBusinessProtocol) {
+        self.business = business
         super.init()
     }
 
@@ -39,18 +40,9 @@ class PhotosListOperation: AsyncOperation {
     // MARK: - Private Methods
 
     private func request() {
-        provider.request([Photo].self, urlRequest: createURLRequest()) { [weak self] response in
+        business.fetchPhotos(with: createURLRequest()) { [weak self] result in
             guard let self = self else { return }
-            do {
-                let result = try response()
-                self.completion(.success(result))
-            } catch {
-                if let apiError = error as? APIResponseError {
-                    self.completion(.failure(apiError))
-                } else {
-                    self.completion(.failure(.invalidResponse))
-                }
-            }
+            self.photosListResult = result
             self.finish()
         }
     }

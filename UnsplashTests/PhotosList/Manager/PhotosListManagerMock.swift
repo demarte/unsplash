@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 @testable import Unsplash
 
 class PhotosListManagerMock: PhotosListManagerProtocol {
@@ -16,6 +17,10 @@ class PhotosListManagerMock: PhotosListManagerProtocol {
     }
 
     var state: State = .success
+
+    func fetchImage(by urlString: String, completion: @escaping FetchImageCompletion) {
+        completion(UIImage())
+    }
 
     func fetch(completion: @escaping FetchPhotosCompletion<[Photo]>) {
         switch state {

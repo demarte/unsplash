@@ -16,10 +16,17 @@ class PhotosListCoordinatorTests: XCTestCase {
         navigationController = UINavigationController()
     }
 
-    func testCoordinatorStart() throws {
+    func testCoordinatorStart() {
         let coordinator = PhotosListCoordinator(navigationController: navigationController)
         coordinator.start()
 
         XCTAssert(navigationController.viewControllers.first is PhotosListViewController)
+    }
+
+    func testShowDetails() {
+        let coordinator = PhotosListCoordinator(navigationController: navigationController)
+        coordinator.showDetails(for: Photo.fixture())
+
+        XCTAssert(navigationController.viewControllers.first is PhotoDetailViewController)
     }
 }

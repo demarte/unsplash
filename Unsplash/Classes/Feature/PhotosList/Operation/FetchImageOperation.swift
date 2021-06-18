@@ -10,16 +10,20 @@ import UIKit
 
 class FetchImageOperation: AsyncOperation {
 
-    // MARK: - Properties
+    // MARK: - Public Properties
+
+    var image: UIImage?
+
+    // MARK: - Private Properties
 
     private let urlString: String
-    private let completion: FetchImageCompletion
+    private let business: PhotosListBusinessProtocol
 
     // MARK: - Initializer
 
-    init(urlString: String, completion: @escaping FetchImageCompletion) {
+    init(urlString: String, business: PhotosListBusinessProtocol) {
         self.urlString = urlString
-        self.completion = completion
+        self.business = business
         super.init()
     }
 
@@ -33,14 +37,10 @@ class FetchImageOperation: AsyncOperation {
     // MARK: - Private Methods
 
     private func request() {
-        guard let url = URL(string: urlString),
-              let data = try? Data(contentsOf: url),
-              let image = UIImage(data: data) else {
-            completion(nil)
-            finish()
-            return
+        business.fetchImage(by: urlString) { [weak self] image in
+            guard let self = self else { return }
+            self.image = image
+            self.finish()
         }
-        completion(image)
-        finish()
     }
 }
