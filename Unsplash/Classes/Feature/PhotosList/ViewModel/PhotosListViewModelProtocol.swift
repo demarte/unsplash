@@ -10,5 +10,8 @@ import Foundation
 protocol PhotosListViewModelProtocol {
 
     var state: Dynamic<PhotosListViewModelState> { get }
+    var isFetching: Dynamic<Bool> { get }
+    var currentPage: Int { get }
+
     func fetch()
 }

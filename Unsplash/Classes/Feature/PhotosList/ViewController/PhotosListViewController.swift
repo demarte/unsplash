@@ -14,6 +14,8 @@ class PhotosListViewController: UIViewController {
     private enum Constants {
         static let itemsPerRow: CGFloat = 3
         static let sectionInsets = UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
+        static let footerHeight: CGFloat = 80.0
+        static let firstPage: String = "1"
     }
 
     // MARK: - Public Properties
@@ -23,6 +25,7 @@ class PhotosListViewController: UIViewController {
     // MARK: - Private Properties
 
     private let viewModel: PhotosListViewModelProtocol?
+    private var showPaginationLoading = false
 
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
@@ -33,6 +36,7 @@ class PhotosListViewController: UIViewController {
     private lazy var activityView: UIActivityIndicatorView = {
         let activityView = UIActivityIndicatorView(style: .large)
         activityView.color = .lightGray
+        activityView.hidesWhenStopped = true
         activityView.translatesAutoresizingMaskIntoConstraints = false
         return activityView
     }()
@@ -73,6 +77,9 @@ class PhotosListViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
         collectionView.register(PhotosListCell.self, forCellWithReuseIdentifier: PhotosListCell.cellIdentifier)
+        collectionView.register(LoadingCell.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                withReuseIdentifier: LoadingCell.identifier)
     }
 
     private func setUpConstraints() {
@@ -93,15 +100,21 @@ class PhotosListViewController: UIViewController {
     private func bindElements() {
         viewModel?.state.bind { [weak self] state in
             guard let self = self else { return }
-            DispatchQueue.main.async {
-                switch state {
-                case .loading:
-                    self.handleLoading()
-                case .loaded(let photos):
-                    self.handleLoaded(with: photos)
-                case .error(let error):
-                    self.handleError(error)
-                }
+            switch state {
+            case .loading:
+                self.handleLoading()
+            case .loaded(let photos):
+                self.handleLoaded(with: photos)
+            case .error(let error):
+                self.handleError(error)
+            }
+        }
+
+        viewModel?.isFetching.bind { [weak self] isFetching in
+            guard let self = self else { return }
+            self.showPaginationLoading = isFetching
+            if isFetching {
+//                self.collectionView.reloadSections(IndexSet(0...1))
             }
         }
     }
@@ -113,11 +126,15 @@ class PhotosListViewController: UIViewController {
 
     private func handleLoaded(with photos: [Photo]) {
         activityView.stopAnimating()
-        activityView.isHidden = true
         collectionView.reloadData()
     }
 
     private func handleError(_ apiError: APIResponseError) { }
+
+    private func scrollViewDidReachBottom() {
+        print("batman")
+        viewModel?.fetch()
+    }
 }
 
 // MARK: - CollectionView Delegate and DataSource
@@ -165,6 +182,26 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
             return
         }
     }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                         withReuseIdentifier: LoadingCell.identifier,
+                                                                         for: indexPath) as? LoadingCell else {
+            return UICollectionReusableView()
+        }
+        showPaginationLoading ? footerView.startLoading() : footerView.stopLoading()
+        return footerView
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard let viewModel = viewModel, !viewModel.isFetching.value else { return }
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
+        if bottomEdge >= scrollView.contentSize.height {
+            scrollViewDidReachBottom()
+        }
+    }
 }
 
 // MARK: - CollectionView UICollectionViewDelegateFlowLayout
@@ -190,5 +227,11 @@ extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Constants.sectionInsets.top
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: Constants.footerHeight)
     }
 }

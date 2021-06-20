@@ -2,26 +2,27 @@
 //  PhotoDetailManagerMock.swift
 //  UnsplashTests
 //
-//  Created by Ivan Rodrigues de Martino on 17/06/21.
+//  Created by Ivan Rodrigues de Martino on 20/06/21.
 //
 
 import UIKit
 @testable import Unsplash
 
 class PhotoDetailManagerMock: PhotoDetailManagerProtocol {
+    
     enum State {
         case success
         case failure
     }
 
     var state: State = .success
-
-    func fetchPhotoDetails(photoURL: String, completion: @escaping FetchImageCompletion) {
+    
+    func retrieveImage(for photo: Photo, completion: @escaping FetchPhotoCompletion) {
         switch state {
         case .success:
-            completion(UIImage())
+            completion(.success(UIImage()))
         case .failure:
-            completion(nil)
+            completion(.failure(APIResponseError.invalidResponse))
         }
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 typealias FetchPhotosCompletion<T: Decodable> = (Result<T, APIResponseError>) -> Void
 typealias FetchImageCompletion = (UIImage?) -> Void
@@ -25,8 +26,8 @@ class PhotosListManager: OperationQueue, PhotosListManagerProtocol {
 
     // MARK: - Public Methods
 
-    func fetch(completion: @escaping FetchPhotosCompletion<[Photo]>) {
-        let fetchOperation = PhotosListOperation(business: business)
+    func fetch(by pageNumber: Int, completion: @escaping FetchPhotosCompletion<[Photo]>) {
+        let fetchOperation = PhotosListOperation(pageNumber: pageNumber, business: business)
         fetchOperation.completionBlock = {
             DispatchQueue.main.async {
                 completion(fetchOperation.photosListResult ?? .failure(.noData))
@@ -34,14 +35,22 @@ class PhotosListManager: OperationQueue, PhotosListManagerProtocol {
         }
         addOperation(fetchOperation)
     }
+    
+    func retrieveImage(for photo: Photo, completion: @escaping FetchImageCompletion) {
+        guard let urlString = photo.urls?.small, let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
 
-    func fetchImage(by urlString: String, completion: @escaping FetchImageCompletion) {
-        let fetchImageOperation = FetchImageOperation(urlString: urlString, business: business)
-        fetchImageOperation.completionBlock = {
-            DispatchQueue.main.async {
-                completion(fetchImageOperation.image)
+        let imageResource = ImageResource(downloadURL: url, cacheKey: photo.id)
+
+        KingfisherManager.shared.retrieveImage(with: imageResource) { result in
+            switch result {
+            case .success(let retrievedImage):
+                completion(retrievedImage.image)
+            case .failure:
+                completion(nil)
             }
         }
-        addOperation(fetchImageOperation)
     }
 }

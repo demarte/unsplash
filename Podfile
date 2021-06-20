@@ -6,7 +6,7 @@ target 'Unsplash' do
   use_frameworks!
 
   # Pods for Unsplash
-  pod 'SwiftLint'
+  pod 'Kingfisher', '~> 6.3.0'
 
   target 'UnsplashTests' do
     inherit! :search_paths

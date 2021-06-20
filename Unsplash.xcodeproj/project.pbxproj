@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0D76EE7DB2AA440C238342F2 /* Pods_Unsplash_UnsplashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20193EEA76174771D5E2636 /* Pods_Unsplash_UnsplashUITests.framework */; };
-		EC2F5B512666F98B0071FF05 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EC2F5B502666F98B0071FF05 /* .swiftlint.yml */; };
+		EC1DD631267D67400034ECDE /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1DD630267D67400034ECDE /* LoadingCell.swift */; };
 		EC2F5B532666FBEC0071FF05 /* APIResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F5B522666FBEC0071FF05 /* APIResponseError.swift */; };
 		EC2F5B552666FFF40071FF05 /* PhotosListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F5B542666FFF40071FF05 /* PhotosListManager.swift */; };
 		EC2F5B57266700060071FF05 /* PhotosListManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F5B56266700060071FF05 /* PhotosListManagerProtocol.swift */; };
@@ -16,8 +16,10 @@
 		EC3E7C6F267BE65100B806AE /* PhotosListBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E7C6E267BE65100B806AE /* PhotosListBusiness.swift */; };
 		EC3E7C71267BE67400B806AE /* PhotosListBusinessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E7C70267BE67400B806AE /* PhotosListBusinessProtocol.swift */; };
 		EC3E7C74267BF2A400B806AE /* PhotosListBusinessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E7C73267BF2A400B806AE /* PhotosListBusinessMock.swift */; };
-		EC3E7C78267BF31000B806AE /* PhotoDetailManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E7C77267BF31000B806AE /* PhotoDetailManagerTests.swift */; };
 		EC3E7C7B267BF67D00B806AE /* PhotoDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E7C7A267BF67D00B806AE /* PhotoDetailViewModelTests.swift */; };
+		EC532E01267F979800827CB2 /* PhotoDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC532E00267F979800827CB2 /* PhotoDetailManager.swift */; };
+		EC532E03267F97A900827CB2 /* PhotoDetailManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC532E02267F97A900827CB2 /* PhotoDetailManagerProtocol.swift */; };
+		EC532E05267FA17600827CB2 /* PhotoDetailManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC532E04267FA17600827CB2 /* PhotoDetailManagerMock.swift */; };
 		EC67916E267CCF14002527DC /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC67916D267CCF14002527DC /* UIFont.swift */; };
 		EC679170267CD607002527DC /* NewYorkMedium-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC67916F267CD607002527DC /* NewYorkMedium-Bold.otf */; };
 		EC679172267CD63E002527DC /* NewYorkMedium-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC679171267CD63E002527DC /* NewYorkMedium-Regular.otf */; };
@@ -39,7 +41,6 @@
 		EC6D717E26664EFB0037DC6A /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D717D26664EFB0037DC6A /* APIProvider.swift */; };
 		EC94B5D326683BC100F71C22 /* PhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94B5D226683BC100F71C22 /* PhotoURL.swift */; };
 		EC94B5D7266844EB00F71C22 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94B5D6266844EB00F71C22 /* Server.swift */; };
-		EC9E0262267C0D9500E129EE /* PhotoDetailManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E0261267C0D9500E129EE /* PhotoDetailManagerMock.swift */; };
 		EC9E0264267C10A800E129EE /* PhotosListBusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E0263267C10A800E129EE /* PhotosListBusinessTests.swift */; };
 		ECEDB15E2668FD310052B930 /* PhotosListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB15D2668FD310052B930 /* PhotosListManagerTests.swift */; };
 		ECEDB1602668FE840052B930 /* APIProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB15F2668FE840052B930 /* APIProviderProtocol.swift */; };
@@ -51,14 +52,11 @@
 		ECEF021226692944002FA5A3 /* PhotosListCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021126692944002FA5A3 /* PhotosListCoordinatorTests.swift */; };
 		ECEF021426695825002FA5A3 /* UICollectionViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021326695825002FA5A3 /* UICollectionViewCell+Identifier.swift */; };
 		ECEF021726695D34002FA5A3 /* PhotosListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021626695D34002FA5A3 /* PhotosListCell.swift */; };
-		ECEF021926695E4A002FA5A3 /* FetchImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021826695E4A002FA5A3 /* FetchImageOperation.swift */; };
 		ECEF021B26696127002FA5A3 /* PhotosListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021A26696127002FA5A3 /* PhotosListCellViewModel.swift */; };
 		ECEF021D26696328002FA5A3 /* PhotosListCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021C26696328002FA5A3 /* PhotosListCellViewModelProtocol.swift */; };
 		ECEF0220266969F2002FA5A3 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF021F266969F2002FA5A3 /* PhotoDetailViewController.swift */; };
 		ECEF022426696BE6002FA5A3 /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF022326696BE6002FA5A3 /* PhotoDetailViewModel.swift */; };
 		ECEF022626696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF022526696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift */; };
-		ECEF022926696D59002FA5A3 /* PhotoDetailManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF022826696D59002FA5A3 /* PhotoDetailManagerProtocol.swift */; };
-		ECEF022B26696D92002FA5A3 /* PhotoDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF022A26696D92002FA5A3 /* PhotoDetailManager.swift */; };
 		F2AC0617B782A477A587AE57 /* Pods_UnsplashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BE93A3E2F1EC1567DA73AD /* Pods_UnsplashTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +86,7 @@
 		AAA7719E1CD15E5553F92C2A /* Pods-Unsplash-UnsplashUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash-UnsplashUITests.release.xcconfig"; path = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B28F5CB3B4FA1101D0AB2025 /* Pods-Unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash.release.xcconfig"; path = "Target Support Files/Pods-Unsplash/Pods-Unsplash.release.xcconfig"; sourceTree = "<group>"; };
 		C254AFC92A85E06AB4FE48B2 /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash-UnsplashUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		EC2F5B502666F98B0071FF05 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EC1DD630267D67400034ECDE /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		EC2F5B522666FBEC0071FF05 /* APIResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseError.swift; sourceTree = "<group>"; };
 		EC2F5B542666FFF40071FF05 /* PhotosListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListManager.swift; sourceTree = "<group>"; };
 		EC2F5B56266700060071FF05 /* PhotosListManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListManagerProtocol.swift; sourceTree = "<group>"; };
@@ -96,8 +94,11 @@
 		EC3E7C6E267BE65100B806AE /* PhotosListBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListBusiness.swift; sourceTree = "<group>"; };
 		EC3E7C70267BE67400B806AE /* PhotosListBusinessProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListBusinessProtocol.swift; sourceTree = "<group>"; };
 		EC3E7C73267BF2A400B806AE /* PhotosListBusinessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListBusinessMock.swift; sourceTree = "<group>"; };
-		EC3E7C77267BF31000B806AE /* PhotoDetailManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManagerTests.swift; sourceTree = "<group>"; };
 		EC3E7C7A267BF67D00B806AE /* PhotoDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModelTests.swift; sourceTree = "<group>"; };
+		EC532DFE267F894200827CB2 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EC532E00267F979800827CB2 /* PhotoDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManager.swift; sourceTree = "<group>"; };
+		EC532E02267F97A900827CB2 /* PhotoDetailManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManagerProtocol.swift; sourceTree = "<group>"; };
+		EC532E04267FA17600827CB2 /* PhotoDetailManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManagerMock.swift; sourceTree = "<group>"; };
 		EC67916D267CCF14002527DC /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		EC67916F267CD607002527DC /* NewYorkMedium-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkMedium-Bold.otf"; sourceTree = "<group>"; };
 		EC679171267CD63E002527DC /* NewYorkMedium-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkMedium-Regular.otf"; sourceTree = "<group>"; };
@@ -124,7 +125,6 @@
 		EC6D717D26664EFB0037DC6A /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		EC94B5D226683BC100F71C22 /* PhotoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoURL.swift; sourceTree = "<group>"; };
 		EC94B5D6266844EB00F71C22 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
-		EC9E0261267C0D9500E129EE /* PhotoDetailManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManagerMock.swift; sourceTree = "<group>"; };
 		EC9E0263267C10A800E129EE /* PhotosListBusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListBusinessTests.swift; sourceTree = "<group>"; };
 		ECEDB15D2668FD310052B930 /* PhotosListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListManagerTests.swift; sourceTree = "<group>"; };
 		ECEDB15F2668FE840052B930 /* APIProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderProtocol.swift; sourceTree = "<group>"; };
@@ -136,14 +136,11 @@
 		ECEF021126692944002FA5A3 /* PhotosListCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCoordinatorTests.swift; sourceTree = "<group>"; };
 		ECEF021326695825002FA5A3 /* UICollectionViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Identifier.swift"; sourceTree = "<group>"; };
 		ECEF021626695D34002FA5A3 /* PhotosListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCell.swift; sourceTree = "<group>"; };
-		ECEF021826695E4A002FA5A3 /* FetchImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImageOperation.swift; sourceTree = "<group>"; };
 		ECEF021A26696127002FA5A3 /* PhotosListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCellViewModel.swift; sourceTree = "<group>"; };
 		ECEF021C26696328002FA5A3 /* PhotosListCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		ECEF021F266969F2002FA5A3 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		ECEF022326696BE6002FA5A3 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
 		ECEF022526696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModelProtocol.swift; sourceTree = "<group>"; };
-		ECEF022826696D59002FA5A3 /* PhotoDetailManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManagerProtocol.swift; sourceTree = "<group>"; };
-		ECEF022A26696D92002FA5A3 /* PhotoDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailManager.swift; sourceTree = "<group>"; };
 		F20193EEA76174771D5E2636 /* Pods_Unsplash_UnsplashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash_UnsplashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -211,26 +208,26 @@
 			isa = PBXGroup;
 			children = (
 				EC3E7C79267BF65F00B806AE /* ViewModel */,
-				EC3E7C76267BF2F000B806AE /* Manager */,
 			);
 			path = PhotoDetail;
-			sourceTree = "<group>";
-		};
-		EC3E7C76267BF2F000B806AE /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				EC3E7C77267BF31000B806AE /* PhotoDetailManagerTests.swift */,
-				EC9E0261267C0D9500E129EE /* PhotoDetailManagerMock.swift */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		EC3E7C79267BF65F00B806AE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				EC3E7C7A267BF67D00B806AE /* PhotoDetailViewModelTests.swift */,
+				EC532E04267FA17600827CB2 /* PhotoDetailManagerMock.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EC532DFF267F977F00827CB2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				EC532E00267F979800827CB2 /* PhotoDetailManager.swift */,
+				EC532E02267F97A900827CB2 /* PhotoDetailManagerProtocol.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		EC67910C267CCD44002527DC /* fonts */ = {
@@ -247,6 +244,7 @@
 		EC6D7124266642EC0037DC6A = {
 			isa = PBXGroup;
 			children = (
+				EC532DFE267F894200827CB2 /* .swiftlint.yml */,
 				EC6D712F266642EC0037DC6A /* Unsplash */,
 				EC6D7146266642EE0037DC6A /* UnsplashTests */,
 				EC6D7151266642EE0037DC6A /* UnsplashUITests */,
@@ -269,7 +267,6 @@
 		EC6D712F266642EC0037DC6A /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
-				EC2F5B502666F98B0071FF05 /* .swiftlint.yml */,
 				EC6D71672666466D0037DC6A /* Resources */,
 				EC6D7166266646650037DC6A /* Classes */,
 			);
@@ -346,7 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				ECEF0208266920B6002FA5A3 /* Extensions */,
-				EC6D717826664D440037DC6A /* Utils */,
+				EC6D717826664D440037DC6A /* Core */,
 				EC6D7160266643030037DC6A /* Supporting Files */,
 				EC6D7165266646550037DC6A /* Feature */,
 			);
@@ -404,20 +401,19 @@
 			isa = PBXGroup;
 			children = (
 				EC6D717626664CFC0037DC6A /* PhotosListOperation.swift */,
-				ECEF021826695E4A002FA5A3 /* FetchImageOperation.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
 		};
-		EC6D717826664D440037DC6A /* Utils */ = {
+		EC6D717826664D440037DC6A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				ECEF020726692099002FA5A3 /* Coordinator */,
 				EC6D717F26664F290037DC6A /* API Provider */,
-				EC6D717926664D660037DC6A /* AsyncOperation.swift */,
-				EC6D717B26664D980037DC6A /* Dynamic.swift */,
+				ECE518DC267E214E00759BB4 /* AsyncOperation */,
+				ECEF020726692099002FA5A3 /* Coordinator */,
+				ECE518DB267E214100759BB4 /* Dynamic */,
 			);
-			path = Utils;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		EC6D717F26664F290037DC6A /* API Provider */ = {
@@ -438,6 +434,22 @@
 				EC3E7C6C267BDFFE00B806AE /* PhotosListCellViewModelTests.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ECE518DB267E214100759BB4 /* Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				EC6D717B26664D980037DC6A /* Dynamic.swift */,
+			);
+			path = Dynamic;
+			sourceTree = "<group>";
+		};
+		ECE518DC267E214E00759BB4 /* AsyncOperation */ = {
+			isa = PBXGroup;
+			children = (
+				EC6D717926664D660037DC6A /* AsyncOperation.swift */,
+			);
+			path = AsyncOperation;
 			sourceTree = "<group>";
 		};
 		ECEDB15C2668FD1A0052B930 /* Manager */ = {
@@ -502,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				ECEF021626695D34002FA5A3 /* PhotosListCell.swift */,
+				EC1DD630267D67400034ECDE /* LoadingCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,7 +522,7 @@
 		ECEF021E266969D1002FA5A3 /* PhotoDetail */ = {
 			isa = PBXGroup;
 			children = (
-				ECEF022726696D44002FA5A3 /* Manager */,
+				EC532DFF267F977F00827CB2 /* Manager */,
 				ECEF022226696BCF002FA5A3 /* ViewModel */,
 				ECEF0221266969F5002FA5A3 /* ViewController */,
 			);
@@ -533,15 +546,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		ECEF022726696D44002FA5A3 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				ECEF022826696D59002FA5A3 /* PhotoDetailManagerProtocol.swift */,
-				ECEF022A26696D92002FA5A3 /* PhotoDetailManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -554,6 +558,7 @@
 				EC6D7129266642EC0037DC6A /* Sources */,
 				EC6D712A266642EC0037DC6A /* Frameworks */,
 				EC6D712B266642EC0037DC6A /* Resources */,
+				6B1BCB0E6F0177016D2434A4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -591,6 +596,7 @@
 				EC6D714A266642EE0037DC6A /* Sources */,
 				EC6D714B266642EE0037DC6A /* Frameworks */,
 				EC6D714C266642EE0037DC6A /* Resources */,
+				9EC2EBB3943A8B94A9DB0743 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -653,7 +659,6 @@
 				EC679176267CDEAB002527DC /* NewYork.ttf in Resources */,
 				EC679172267CD63E002527DC /* NewYorkMedium-Regular.otf in Resources */,
 				EC679174267CD64E002527DC /* NewYorkMedium-Semibold.otf in Resources */,
-				EC2F5B512666F98B0071FF05 /* .swiftlint.yml in Resources */,
 				EC6D713D266642ED0037DC6A /* LaunchScreen.storyboard in Resources */,
 				EC6D713A266642ED0037DC6A /* Assets.xcassets in Resources */,
 			);
@@ -720,6 +725,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6B1BCB0E6F0177016D2434A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Unsplash/Pods-Unsplash-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Unsplash/Pods-Unsplash-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Unsplash/Pods-Unsplash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EC2EBB3943A8B94A9DB0743 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B91F13B89C64C8116E085A2D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -767,15 +806,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECEF021726695D34002FA5A3 /* PhotosListCell.swift in Sources */,
-				ECEF022926696D59002FA5A3 /* PhotoDetailManagerProtocol.swift in Sources */,
 				EC2F5B57266700060071FF05 /* PhotosListManagerProtocol.swift in Sources */,
 				EC2F5B532666FBEC0071FF05 /* APIResponseError.swift in Sources */,
 				EC2F5B552666FFF40071FF05 /* PhotosListManager.swift in Sources */,
 				ECEF02062669207C002FA5A3 /* PhotosListCoordinator.swift in Sources */,
-				ECEF021926695E4A002FA5A3 /* FetchImageOperation.swift in Sources */,
 				ECEF0220266969F2002FA5A3 /* PhotoDetailViewController.swift in Sources */,
 				ECEF021426695825002FA5A3 /* UICollectionViewCell+Identifier.swift in Sources */,
 				EC6D7170266648080037DC6A /* Photo.swift in Sources */,
+				EC1DD631267D67400034ECDE /* LoadingCell.swift in Sources */,
+				EC532E01267F979800827CB2 /* PhotoDetailManager.swift in Sources */,
 				EC3E7C6F267BE65100B806AE /* PhotosListBusiness.swift in Sources */,
 				EC6D717C26664D980037DC6A /* Dynamic.swift in Sources */,
 				ECEF021D26696328002FA5A3 /* PhotosListCellViewModelProtocol.swift in Sources */,
@@ -786,13 +825,13 @@
 				EC6D7131266642EC0037DC6A /* AppDelegate.swift in Sources */,
 				EC6D716D266646FB0037DC6A /* PhotosListViewModelProtocol.swift in Sources */,
 				ECEF022626696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift in Sources */,
+				EC532E03267F97A900827CB2 /* PhotoDetailManagerProtocol.swift in Sources */,
 				EC6D7133266642EC0037DC6A /* SceneDelegate.swift in Sources */,
 				EC94B5D7266844EB00F71C22 /* Server.swift in Sources */,
 				ECEDB1602668FE840052B930 /* APIProviderProtocol.swift in Sources */,
 				EC3E7C71267BE67400B806AE /* PhotosListBusinessProtocol.swift in Sources */,
 				ECEF020F266928A2002FA5A3 /* PhotosListViewController.swift in Sources */,
 				ECEF021B26696127002FA5A3 /* PhotosListCellViewModel.swift in Sources */,
-				ECEF022B26696D92002FA5A3 /* PhotoDetailManager.swift in Sources */,
 				EC94B5D326683BC100F71C22 /* PhotoURL.swift in Sources */,
 				EC6D717726664CFC0037DC6A /* PhotosListOperation.swift in Sources */,
 				EC6D717E26664EFB0037DC6A /* APIProvider.swift in Sources */,
@@ -807,8 +846,7 @@
 				ECEF021226692944002FA5A3 /* PhotosListCoordinatorTests.swift in Sources */,
 				EC3E7C6D267BDFFE00B806AE /* PhotosListCellViewModelTests.swift in Sources */,
 				ECEDB165266906890052B930 /* PhotosListManagerMock.swift in Sources */,
-				EC9E0262267C0D9500E129EE /* PhotoDetailManagerMock.swift in Sources */,
-				EC3E7C78267BF31000B806AE /* PhotoDetailManagerTests.swift in Sources */,
+				EC532E05267FA17600827CB2 /* PhotoDetailManagerMock.swift in Sources */,
 				EC3E7C7B267BF67D00B806AE /* PhotoDetailViewModelTests.swift in Sources */,
 				EC3E7C74267BF2A400B806AE /* PhotosListBusinessMock.swift in Sources */,
 				EC9E0264267C10A800E129EE /* PhotosListBusinessTests.swift in Sources */,

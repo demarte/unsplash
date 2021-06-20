@@ -82,16 +82,15 @@ class PhotoDetailViewController: UIViewController {
     }
 
     private func bindElements() {
-        viewModel?.state.bind { state in
-            DispatchQueue.main.async {
-                switch state {
-                case .loaded(let image):
-                    self.handleLoaded(with: image)
-                case .loading:
-                    self.handleLoading()
-                case .error:
-                    print("error")
-                }
+        viewModel?.state.bind { [weak self] state in
+            guard let self = self else { return }
+            switch state {
+            case .loaded(let image):
+                self.handleLoaded(with: image)
+            case .loading:
+                self.handleLoading()
+            case .error:
+                self.handleError()
             }
         }
     }
@@ -132,6 +131,10 @@ class PhotoDetailViewController: UIViewController {
         imageView.image = image
         imageView.sizeToFit()
         setUpScrollView()
+    }
+
+    private func handleError() {
+        /* not implemented */
     }
 
     private func setUpScrollView() {

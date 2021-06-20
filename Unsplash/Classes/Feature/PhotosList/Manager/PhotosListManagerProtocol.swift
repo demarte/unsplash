@@ -9,6 +9,6 @@ import Foundation
 
 protocol PhotosListManagerProtocol {
 
-    func fetch(completion: @escaping FetchPhotosCompletion<[Photo]>)
-    func fetchImage(by urlString: String, completion: @escaping FetchImageCompletion)
+    func fetch(by pageNumber: Int, completion: @escaping FetchPhotosCompletion<[Photo]>)
+    func retrieveImage(for photo: Photo, completion: @escaping FetchImageCompletion)
 }

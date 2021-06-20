@@ -2,33 +2,41 @@
 //  PhotoDetailManager.swift
 //  Unsplash
 //
-//  Created by Ivan Rodrigues de Martino on 03/06/21.
+//  Created by Ivan Rodrigues de Martino on 20/06/21.
 //
 
 import Foundation
-import UIKit
+import Kingfisher
 
-class PhotoDetailManager: OperationQueue, PhotoDetailManagerProtocol {
+typealias FetchPhotoCompletion = (Result<UIImage, Error>) -> Void
 
+final class PhotoDetailManager: PhotoDetailManagerProtocol {
+    
     // MARK: - Private Properties
-
-    private var business: PhotosListBusinessProtocol
-
-    // MARK: - Initializer
-
-    init(business: PhotosListBusinessProtocol = PhotosListBusiness()) {
-        self.business = business
+    
+    private let manager: KingfisherManager
+    
+    // MARK: - Initializers
+    
+    init(manager: KingfisherManager = KingfisherManager.shared) {
+        self.manager = manager
     }
-
-    // MARK: - Public Properties
-
-    func fetchPhotoDetails(photoURL: String, completion: @escaping FetchImageCompletion) {
-        let operation = FetchImageOperation(urlString: photoURL, business: business)
-        operation.completionBlock = {
-            DispatchQueue.main.async {
-                completion(operation.image)
+    
+    // MARK: - Public Methods
+    
+    func retrieveImage(for photo: Photo, completion: @escaping FetchPhotoCompletion) {
+        guard let urlString = photo.urls?.full, let url = URL(string: urlString) else {
+            completion(.failure(APIResponseError.noData))
+            return
+        }
+        
+        manager.retrieveImage(with: url) { result in
+            switch result {
+            case .success(let retrievedImage):
+                completion(.success(retrievedImage.image))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
-        addOperation(operation)
     }
 }

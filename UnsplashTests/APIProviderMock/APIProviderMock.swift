@@ -28,13 +28,4 @@ class APIProviderMock: APIProviderProtocol {
             completion { throw error }
         }
     }
-
-    func requestImage(from url: String, completion: @escaping ImageNetworkCompletion) {
-        switch state {
-        case .success:
-            completion(UIImage())
-        case .error:
-            completion(nil)
-        }
-    }
 }

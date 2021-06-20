@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 typealias NetworkCompletion<T: Decodable> = (() throws ->  T) -> Void
-typealias ImageNetworkCompletion = (UIImage?) -> Void
 
 struct APIProvider: APIProviderProtocol {
 
@@ -40,15 +39,5 @@ struct APIProvider: APIProviderProtocol {
             }
 
         }.resume()
-    }
-
-    func requestImage(from url: String, completion: @escaping ImageNetworkCompletion) {
-        guard let url = URL(string: url),
-              let data = try? Data(contentsOf: url),
-              let image = UIImage(data: data) else {
-            completion(nil)
-            return
-        }
-        completion(image)
     }
 }

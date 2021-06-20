@@ -45,17 +45,4 @@ class PhotosListBusinessTests: XCTestCase {
             }
         }
     }
-
-    func testFetchImageSuccess() {
-        business.fetchImage(by: String()) { image in
-            XCTAssertNotNil(image)
-        }
-    }
-
-    func testFetchImageFailure() {
-        provider.state = .error(.invalidResponse)
-        business.fetchImage(by: String()) { image in
-            XCTAssertNil(image)
-        }
-    }
 }

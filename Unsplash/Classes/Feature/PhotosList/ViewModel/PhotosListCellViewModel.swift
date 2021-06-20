@@ -36,8 +36,8 @@ final class PhotosListCellViewModel: PhotosListCellViewModelProtocol {
 
     func fetchImage() {
         state.value = .loading
-        let url = photo.urls?.small ?? String()
-        manager.fetchImage(by: url) { [weak self] result in
+        
+        manager.retrieveImage(for: photo) { [weak self] result in
             guard let self = self else { return }
             if let image = result {
                 self.state.value = .loaded(image)

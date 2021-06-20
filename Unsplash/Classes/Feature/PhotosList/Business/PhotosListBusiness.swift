@@ -34,10 +34,6 @@ final class PhotosListBusiness: PhotosListBusinessProtocol {
         }
     }
 
-    func fetchImage(by url: String, completion: @escaping FetchImageCompletion) {
-        provider.requestImage(from: url, completion: completion)
-    }
-
     // MARK: - Private Methods
 
     private func handleError(_ error: Error) -> APIResponseError {

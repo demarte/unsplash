@@ -10,3 +10,7 @@ import UIKit
 extension UICollectionViewCell {
     static let cellIdentifier = String(describing: self)
 }
+
+extension UICollectionReusableView {
+    static let identifier = String(describing: self)
+}

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 enum PhotoDetailViewModelState {
     case loading
@@ -22,25 +23,25 @@ class PhotoDetailViewModel: PhotoDetailViewModelProtocol {
 
     // MARK: - Private Properties
 
-    private let manager: PhotoDetailManagerProtocol
     private let photo: Photo
+    private let manager: PhotoDetailManagerProtocol
 
     // MARK: - Initializer
 
     init(photo: Photo, manager: PhotoDetailManagerProtocol = PhotoDetailManager()) {
-        self.manager = manager
         self.photo = photo
+        self.manager = manager
     }
 
     // MARK: Public Methods
 
     func fetchPhotoDetails() {
-        guard let url = photo.urls?.full else { return }
-        manager.fetchPhotoDetails(photoURL: url) { [weak self] result in
+        manager.retrieveImage(for: photo) { [weak self] result in
             guard let self = self else { return }
-            if let image = result {
+            switch result {
+            case .success(let image):
                 self.state.value = .loaded(image)
-            } else {
+            case .failure:
                 self.state.value = .error
             }
         }

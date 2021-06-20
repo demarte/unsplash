@@ -18,10 +18,13 @@ final class PhotosListViewModel: PhotosListViewModelProtocol {
     // MARK: - Public Properties
 
     private(set) var state = Dynamic<PhotosListViewModelState>(.loading)
+    private(set) var isFetching = Dynamic<Bool>(false)
+    private(set) var currentPage: Int = .zero
 
     // MARK: - Private Properties
 
     private let manager: PhotosListManagerProtocol
+    private var photos: [Photo] = []
 
     // MARK: - Initializer
 
@@ -32,14 +35,19 @@ final class PhotosListViewModel: PhotosListViewModelProtocol {
     // MARK: - Public Methods
 
     func fetch() {
-        manager.fetch { [weak self] result in
+        currentPage += 1
+        isFetching.value = true
+        manager.fetch(by: currentPage) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let photos):
-                self.state.value = .loaded(photos)
+                let count = self.photos.count
+                self.photos.insert(contentsOf: photos, at: count)
+                self.state.value = .loaded(self.photos)
             case .failure(let error):
                 self.handleAPIError(error)
             }
+            self.isFetching.value = false
         }
     }
 

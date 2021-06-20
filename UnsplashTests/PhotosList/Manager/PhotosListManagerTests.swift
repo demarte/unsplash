@@ -24,7 +24,7 @@ class PhotosListManagerTests: XCTestCase {
     }
 
     func testFetchPhotosSuccess() {
-        manager.fetch { result in
+        manager.fetch(by: .zero) { result in
             switch result {
             case .success(let photos):
                 XCTAssertEqual(photos.count, 1)
@@ -46,26 +46,13 @@ class PhotosListManagerTests: XCTestCase {
 
     func testFetchPhotosFailure() {
         business.state = .failure
-        manager.fetch { result in
+        manager.fetch(by: .zero) { result in
             switch result {
             case .success:
                 XCTFail("Expected failure")
             case .failure(let error):
                 XCTAssertEqual(error, .noData)
             }
-        }
-    }
-
-    func testFetchImageSuccess() {
-        manager.fetchImage(by: String()) { image in
-            XCTAssertNotNil(image)
-        }
-    }
-
-    func testFetchImageFailure() {
-        business.state = .failure
-        manager.fetchImage(by: String()) { image in
-            XCTAssertNil(image)
         }
     }
 }

@@ -9,6 +9,12 @@ import UIKit
 
 final class PhotosListCell: UICollectionViewCell {
 
+    // MARK: - Constants
+
+    private enum Constants {
+        static let padding: CGFloat = 4.0
+    }
+
     // MARK: - Private Properties
     private var viewModel: PhotosListCellViewModelProtocol?
 
@@ -68,10 +74,10 @@ final class PhotosListCell: UICollectionViewCell {
 
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4.0),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4.0),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 4.0),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4.0),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.padding),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.padding),
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.padding),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.padding),
             activityView.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])

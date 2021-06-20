@@ -18,16 +18,21 @@ class PhotosListManagerMock: PhotosListManagerProtocol {
 
     var state: State = .success
 
-    func fetchImage(by urlString: String, completion: @escaping FetchImageCompletion) {
-        completion(UIImage())
-    }
-
-    func fetch(completion: @escaping FetchPhotosCompletion<[Photo]>) {
+    func fetch(by pageNumber: Int = .zero, completion: @escaping FetchPhotosCompletion<[Photo]>) {
         switch state {
         case .success:
             completion(.success([Photo.fixture()]))
         case .failure:
             completion(.failure(APIResponseError.invalidResponse))
+        }
+    }
+    
+    func retrieveImage(for photo: Photo, completion: @escaping FetchImageCompletion) {
+        switch state {
+        case .success:
+            completion(UIImage())
+        case .failure:
+            completion(nil)
         }
     }
 }
