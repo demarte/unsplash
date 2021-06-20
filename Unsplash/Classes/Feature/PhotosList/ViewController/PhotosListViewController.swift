@@ -25,7 +25,6 @@ class PhotosListViewController: UIViewController {
     // MARK: - Private Properties
 
     private let viewModel: PhotosListViewModelProtocol?
-    private var showPaginationLoading = false
 
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
@@ -110,18 +109,15 @@ class PhotosListViewController: UIViewController {
             }
         }
 
-        viewModel?.isFetching.bind { [weak self] isFetching in
+        viewModel?.isFetching.bind { [weak self] _ in
             guard let self = self else { return }
-            self.showPaginationLoading = isFetching
-            if isFetching {
-//                self.collectionView.reloadSections(IndexSet(0...1))
-            }
+            self.collectionView.reloadData()
         }
     }
 
     private func handleLoading() {
-        activityView.startAnimating()
         activityView.isHidden = false
+        activityView.startAnimating()
     }
 
     private func handleLoaded(with photos: [Photo]) {
@@ -191,7 +187,7 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
                                                                          for: indexPath) as? LoadingCell else {
             return UICollectionReusableView()
         }
-        showPaginationLoading ? footerView.startLoading() : footerView.stopLoading()
+        viewModel?.isFetching.value ?? false ? footerView.startLoading() : footerView.stopLoading()
         return footerView
     }
 

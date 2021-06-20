@@ -36,7 +36,7 @@ final class PhotosListViewModel: PhotosListViewModelProtocol {
 
     func fetch() {
         currentPage += 1
-        isFetching.value = true
+        setUpLoading()
         manager.fetch(by: currentPage) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -55,5 +55,14 @@ final class PhotosListViewModel: PhotosListViewModelProtocol {
 
     private func handleAPIError(_ error: APIResponseError) {
         state.value = .error(error)
+    }
+    
+    private func setUpLoading() {
+        switch state.value {
+        case .loading:
+            isFetching.value = false
+        default:
+            isFetching.value = true
+        }
     }
 }
