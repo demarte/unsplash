@@ -14,7 +14,7 @@ class PhotoDetailViewModelTests: XCTestCase {
     private var viewModel: PhotoDetailViewModelProtocol!
 
     override func setUp() {
-        let photo = Photo.fixture(ulrs: PhotoURL.fixture(full: String()))
+        let photo = Photo.fixture(urls: PhotoURL.fixture(full: String()))
         manager = PhotoDetailManagerMock()
         viewModel = PhotoDetailViewModel(photo: photo, manager: manager)
     }

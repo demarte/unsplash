@@ -128,7 +128,6 @@ class PhotosListViewController: UIViewController {
     private func handleError(_ apiError: APIResponseError) { }
 
     private func scrollViewDidReachBottom() {
-        print("batman")
         viewModel?.fetch()
     }
 }

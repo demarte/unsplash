@@ -9,7 +9,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var coordinator: PhotosListCoordinator?
+    var coordinator: MainCoordinator?
     var window: UIWindow?
 
     func scene(_ scene: UIScene,
@@ -17,13 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        let tabBarController = UITabBarController()
         let navigationController = UINavigationController()
-        coordinator = PhotosListCoordinator(navigationController: navigationController)
+        coordinator = MainCoordinator(tabBarController: tabBarController, navigationController: navigationController)
         coordinator?.start()
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = navigationController
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 }

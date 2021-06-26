@@ -8,6 +8,10 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
+    
+    private enum Constants {
+        static let padding: CGFloat = 8.0
+    }
 
     // MARK: - Private Properties
 
@@ -68,6 +72,7 @@ class PhotoDetailViewController: UIViewController {
     // MARK: - Private Methods
 
     private func finishInit() {
+        setUpNavigationItems()
         setUpView()
         bindElements()
         setUpScrollViewConstraints()
@@ -79,6 +84,11 @@ class PhotoDetailViewController: UIViewController {
         view.addSubview(scrollView)
         view.addSubview(activityView)
         scrollView.addSubview(imageView)
+    }
+    
+    private func setUpNavigationItems() {
+        let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(savePhoto))
+        navigationItem.rightBarButtonItem = saveItem
     }
 
     private func bindElements() {
@@ -99,8 +109,8 @@ class PhotoDetailViewController: UIViewController {
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .zero),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: .zero),
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8.0),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.padding),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.padding),
             activityView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             activityView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
@@ -148,6 +158,11 @@ class PhotoDetailViewController: UIViewController {
     @objc
     private func handleDoubleTap() {
         scrollView.zoom(to: imageView.bounds, animated: true)
+    }
+    
+    @objc
+    private func savePhoto() {
+        viewModel?.savePhoto()
     }
 
     private func updateMinZoomScaleForSize(_ size: CGSize) {

@@ -12,4 +12,5 @@ protocol PhotoDetailViewModelProtocol {
     var state: Dynamic<PhotoDetailViewModelState> { get }
 
     func fetchPhotoDetails()
+    func savePhoto()
 }

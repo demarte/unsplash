@@ -46,4 +46,13 @@ class PhotoDetailViewModel: PhotoDetailViewModelProtocol {
             }
         }
     }
+    
+    func savePhoto() {
+        let data = UserDefaults.standard.array(forKey: UserDefaultsKeys.photoKey.rawValue)
+        var retrivedPhotos = [Photo](fromJSONList: data ?? [])
+        if !retrivedPhotos.contains(photo) {
+            retrivedPhotos.append(photo)
+            UserDefaults.standard.set(retrivedPhotos.asJSONList, forKey: UserDefaultsKeys.photoKey.rawValue)
+        }
+    }
 }

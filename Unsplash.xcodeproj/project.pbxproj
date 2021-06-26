@@ -41,7 +41,11 @@
 		EC6D717E26664EFB0037DC6A /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6D717D26664EFB0037DC6A /* APIProvider.swift */; };
 		EC94B5D326683BC100F71C22 /* PhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94B5D226683BC100F71C22 /* PhotoURL.swift */; };
 		EC94B5D7266844EB00F71C22 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94B5D6266844EB00F71C22 /* Server.swift */; };
+		EC9BE9C6267FEEEB00731293 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9BE9C5267FEEEB00731293 /* MainCoordinator.swift */; };
 		EC9E0264267C10A800E129EE /* PhotosListBusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E0263267C10A800E129EE /* PhotosListBusinessTests.swift */; };
+		ECBCEB342687664C00E489F2 /* Array+JSONList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBCEB332687664C00E489F2 /* Array+JSONList.swift */; };
+		ECEB32152684B07500822D63 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEB32142684B07500822D63 /* UserDefaultsKeys.swift */; };
+		ECEB32182684B0EA00822D63 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEB32172684B0EA00822D63 /* FavoritesViewController.swift */; };
 		ECEDB15E2668FD310052B930 /* PhotosListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB15D2668FD310052B930 /* PhotosListManagerTests.swift */; };
 		ECEDB1602668FE840052B930 /* APIProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB15F2668FE840052B930 /* APIProviderProtocol.swift */; };
 		ECEDB163266906460052B930 /* APIProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEDB162266906460052B930 /* APIProviderMock.swift */; };
@@ -125,7 +129,11 @@
 		EC6D717D26664EFB0037DC6A /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		EC94B5D226683BC100F71C22 /* PhotoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoURL.swift; sourceTree = "<group>"; };
 		EC94B5D6266844EB00F71C22 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		EC9BE9C5267FEEEB00731293 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		EC9E0263267C10A800E129EE /* PhotosListBusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListBusinessTests.swift; sourceTree = "<group>"; };
+		ECBCEB332687664C00E489F2 /* Array+JSONList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+JSONList.swift"; sourceTree = "<group>"; };
+		ECEB32142684B07500822D63 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		ECEB32172684B0EA00822D63 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		ECEDB15D2668FD310052B930 /* PhotosListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListManagerTests.swift; sourceTree = "<group>"; };
 		ECEDB15F2668FE840052B930 /* APIProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderProtocol.swift; sourceTree = "<group>"; };
 		ECEDB162266906460052B930 /* APIProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderMock.swift; sourceTree = "<group>"; };
@@ -333,6 +341,7 @@
 		EC6D7165266646550037DC6A /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				EC9BE9C7267FF0A900731293 /* Favorites */,
 				ECEF021E266969D1002FA5A3 /* PhotoDetail */,
 				EC6D7164266646450037DC6A /* PhotosList */,
 			);
@@ -342,6 +351,7 @@
 		EC6D7166266646650037DC6A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EC9BE9C4267FEEB800731293 /* Coordinator */,
 				ECEF0208266920B6002FA5A3 /* Extensions */,
 				EC6D717826664D440037DC6A /* Core */,
 				EC6D7160266643030037DC6A /* Supporting Files */,
@@ -408,9 +418,9 @@
 		EC6D717826664D440037DC6A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				ECEB32132684B05C00822D63 /* UserDefaults */,
 				EC6D717F26664F290037DC6A /* API Provider */,
 				ECE518DC267E214E00759BB4 /* AsyncOperation */,
-				ECEF020726692099002FA5A3 /* Coordinator */,
 				ECE518DB267E214100759BB4 /* Dynamic */,
 			);
 			path = Core;
@@ -436,6 +446,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EC9BE9C4267FEEB800731293 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				ECEF0209266920D4002FA5A3 /* Coordinator.swift */,
+				EC9BE9C5267FEEEB00731293 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		EC9BE9C7267FF0A900731293 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				ECEB32162684B0C700822D63 /* ViewController */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		ECE518DB267E214100759BB4 /* Dynamic */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +477,22 @@
 				EC6D717926664D660037DC6A /* AsyncOperation.swift */,
 			);
 			path = AsyncOperation;
+			sourceTree = "<group>";
+		};
+		ECEB32132684B05C00822D63 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				ECEB32142684B07500822D63 /* UserDefaultsKeys.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		ECEB32162684B0C700822D63 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ECEB32172684B0EA00822D63 /* FavoritesViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		ECEDB15C2668FD1A0052B930 /* Manager */ = {
@@ -477,19 +520,12 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		ECEF020726692099002FA5A3 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				ECEF0209266920D4002FA5A3 /* Coordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		ECEF0208266920B6002FA5A3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				ECEF021326695825002FA5A3 /* UICollectionViewCell+Identifier.swift */,
 				EC67916D267CCF14002527DC /* UIFont.swift */,
+				ECBCEB332687664C00E489F2 /* Array+JSONList.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -813,6 +849,7 @@
 				ECEF0220266969F2002FA5A3 /* PhotoDetailViewController.swift in Sources */,
 				ECEF021426695825002FA5A3 /* UICollectionViewCell+Identifier.swift in Sources */,
 				EC6D7170266648080037DC6A /* Photo.swift in Sources */,
+				ECEB32182684B0EA00822D63 /* FavoritesViewController.swift in Sources */,
 				EC1DD631267D67400034ECDE /* LoadingCell.swift in Sources */,
 				EC532E01267F979800827CB2 /* PhotoDetailManager.swift in Sources */,
 				EC3E7C6F267BE65100B806AE /* PhotosListBusiness.swift in Sources */,
@@ -821,6 +858,8 @@
 				ECEF022426696BE6002FA5A3 /* PhotoDetailViewModel.swift in Sources */,
 				EC6D716A266646C40037DC6A /* PhotosListViewModel.swift in Sources */,
 				EC67916E267CCF14002527DC /* UIFont.swift in Sources */,
+				ECEB32152684B07500822D63 /* UserDefaultsKeys.swift in Sources */,
+				ECBCEB342687664C00E489F2 /* Array+JSONList.swift in Sources */,
 				ECEF020A266920D4002FA5A3 /* Coordinator.swift in Sources */,
 				EC6D7131266642EC0037DC6A /* AppDelegate.swift in Sources */,
 				EC6D716D266646FB0037DC6A /* PhotosListViewModelProtocol.swift in Sources */,
@@ -830,6 +869,7 @@
 				EC94B5D7266844EB00F71C22 /* Server.swift in Sources */,
 				ECEDB1602668FE840052B930 /* APIProviderProtocol.swift in Sources */,
 				EC3E7C71267BE67400B806AE /* PhotosListBusinessProtocol.swift in Sources */,
+				EC9BE9C6267FEEEB00731293 /* MainCoordinator.swift in Sources */,
 				ECEF020F266928A2002FA5A3 /* PhotosListViewController.swift in Sources */,
 				ECEF021B26696127002FA5A3 /* PhotosListCellViewModel.swift in Sources */,
 				EC94B5D326683BC100F71C22 /* PhotoURL.swift in Sources */,

@@ -35,7 +35,6 @@ class PhotosListManagerTests: XCTestCase {
                 XCTAssertEqual(photos[0].height, 8192)
                 XCTAssertEqual(photos[0].color, "#262626")
                 XCTAssertEqual(photos[0].blurHash, "L8AT1T?HMy~7v|xH%4={IUIXIXxG")
-                XCTAssertEqual(photos[0].likes, 3)
                 XCTAssertEqual(photos[0].description, "my photo")
                 XCTAssertEqual(photos[0].altDescription, "woman in blue denim jacket sitting on black metal bench")
             case .failure:
