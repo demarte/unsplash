@@ -24,7 +24,7 @@ class FavoritesCoordinator: Coordinator {
     
     func start() {
         let favoritesViewController = FavoritesViewController()
-        favoritesViewController.navigationItem.title = "Favorites"
+        favoritesViewController.navigationItem.title = Localizable.favorites.localize
         favoritesViewController.showDetails = showDetails
         favoritesViewController.showConfirmationAlert = showConfirmationAlert
         favoritesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
@@ -42,9 +42,9 @@ extension FavoritesCoordinator {
     }
     
     func showConfirmationAlert(completion: @escaping (UIAlertAction) -> Void) {
-        let alertController = UIAlertController(title: nil, message: "These items will be deleted. This action cannot be undone.", preferredStyle: .actionSheet)
-        let destructiveAction = UIAlertAction(title: "Delete", style: .destructive, handler: completion)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: completion)
+        let alertController = UIAlertController(title: nil, message: Localizable.alertDescription.localize, preferredStyle: .actionSheet)
+        let destructiveAction = UIAlertAction(title: Localizable.delete.localize, style: .destructive, handler: completion)
+        let cancelAction = UIAlertAction(title: Localizable.cancel.localize, style: .cancel, handler: completion)
         alertController.addAction(destructiveAction)
         alertController.addAction(cancelAction)
         navigationController.present(alertController, animated: true, completion: nil)

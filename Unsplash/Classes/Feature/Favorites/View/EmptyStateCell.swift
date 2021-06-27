@@ -19,7 +19,7 @@ final class EmptyStateCell: UICollectionReusableView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Nothing Saved Yet"
+        label.text = Localizable.emptyStateTitle.localize
         label.font = UIFont.font(type: .bold, textStyle: .title2)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ final class EmptyStateCell: UICollectionReusableView {
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "All the photos you've saved will show up here."
+        label.text = Localizable.emptyStateDescription.localize
         label.textColor = .white
         label.font = UIFont.font(type: .regular, textStyle: .callout)
         label.translatesAutoresizingMaskIntoConstraints = false

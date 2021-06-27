@@ -26,7 +26,7 @@ class PhotosListCoordinator: Coordinator {
         let viewModel = PhotosListViewModel()
         let viewController = PhotosListViewController(viewModel: viewModel)
         viewController.showDetails = showDetails
-        viewController.navigationItem.title = "Unsplash"        
+        viewController.navigationItem.title = Localizable.unsplash.localize
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.pushViewController(viewController, animated: false)
     }

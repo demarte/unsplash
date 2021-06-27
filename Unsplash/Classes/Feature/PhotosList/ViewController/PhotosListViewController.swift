@@ -32,7 +32,7 @@ class PhotosListViewController: UIViewController {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search free high-resolution photos"
+        searchController.searchBar.placeholder = Localizable.placeholder.localize
         searchController.searchBar.delegate = self
         return searchController
     }()

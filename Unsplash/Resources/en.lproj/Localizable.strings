@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Unsplash
+
+  Created by Ivan Rodrigues de Martino on 27/06/21.
+  
+*/
+
+"favorites" = "Favorites";
+"delete" = "Delete";
+"cancel" = "Cancel";
+"alertDescription" = "These items will be deleted. This action cannot be undone.";
+"emptyStateTitle" = "Nothing Saved Yet";
+"emptyStateDescription" = "All the photos you've saved will show up here.";
+"unsplash" = "Unsplash";
+"placeholder" = "Search free high-resolution photos";

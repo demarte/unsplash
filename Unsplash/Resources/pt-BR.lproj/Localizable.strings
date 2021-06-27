@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Unsplash
+
+  Created by Ivan Rodrigues de Martino on 27/06/21.
+  
+*/
+
+"favorites" = "Favoritos";
+"delete" = "Deletar";
+"cancel" = "Cancelar";
+"alertDescription" = "Esses itens serão deletados. Essa ação não poderá ser desfeita.";
+"emptyStateTitle" = "Nada salvo ainda";
+"emptyStateDescription" = "Todas as fotos salvas serão mostradas aqui.";
+"unsplash" = "Unsplash";
+"placeholder" = "Buscar fotos de alta resolução";
