@@ -25,12 +25,16 @@ class PhotoDetailViewModel: PhotoDetailViewModelProtocol {
 
     private let photo: Photo
     private let manager: PhotoDetailManagerProtocol
+    private let provider: UserDefaultsProviderProtocol
 
     // MARK: - Initializer
 
-    init(photo: Photo, manager: PhotoDetailManagerProtocol = PhotoDetailManager()) {
+    init(photo: Photo,
+         manager: PhotoDetailManagerProtocol = PhotoDetailManager(),
+         provider: UserDefaultsProviderProtocol = UserDefaultsProvider.standard) {
         self.photo = photo
         self.manager = manager
+        self.provider = provider
     }
 
     // MARK: Public Methods
@@ -48,11 +52,33 @@ class PhotoDetailViewModel: PhotoDetailViewModelProtocol {
     }
     
     func savePhoto() {
-        let data = UserDefaults.standard.array(forKey: UserDefaultsKeys.photoKey.rawValue)
-        var retrivedPhotos = [Photo](fromJSONList: data ?? [])
-        if !retrivedPhotos.contains(photo) {
-            retrivedPhotos.append(photo)
-            UserDefaults.standard.set(retrivedPhotos.asJSONList, forKey: UserDefaultsKeys.photoKey.rawValue)
+        var retrievedPhotos = retrievePhotos()
+        if !retrievedPhotos.contains(photo) {
+            retrievedPhotos.append(photo)
+            save(photos: retrievedPhotos)
         }
+    }
+    
+    func removePhoto() {
+        var retrievedPhotos = retrievePhotos()
+        if let index = retrievedPhotos.firstIndex(where: { $0 == photo }) {
+            retrievedPhotos.remove(at: index)
+            save(photos: retrievedPhotos)
+        }
+    }
+        
+    func checkIfImageIsSaved() -> Bool {
+        let retrievedPhotos = retrievePhotos()
+        return !retrievedPhotos.isEmpty && retrievedPhotos.contains(photo)
+    }
+    
+    // MARK: - Private Methods
+    
+    private func retrievePhotos() -> [Photo] {
+        return provider.fetchPhotos()
+    }
+    
+    private func save(photos: [Photo]) {
+        provider.save(photos: photos)
     }
 }

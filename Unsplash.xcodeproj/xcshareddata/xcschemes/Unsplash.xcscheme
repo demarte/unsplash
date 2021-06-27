@@ -39,21 +39,6 @@
                ReferencedContainer = "container:Unsplash.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EC6D714D266642EE0037DC6A"
-               BuildableName = "UnsplashUITests.xctest"
-               BlueprintName = "UnsplashUITests"
-               ReferencedContainer = "container:Unsplash.xcodeproj">
-            </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "UnsplashUITests">
-               </Test>
-            </SkippedTests>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

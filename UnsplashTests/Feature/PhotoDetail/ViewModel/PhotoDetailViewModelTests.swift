@@ -10,16 +10,21 @@ import XCTest
 
 class PhotoDetailViewModelTests: XCTestCase {
 
+    private var photo: Photo!
+    private var provider: UserDefaultsProviderMock!
     private var manager: PhotoDetailManagerMock!
     private var viewModel: PhotoDetailViewModelProtocol!
 
     override func setUp() {
-        let photo = Photo.fixture(urls: PhotoURL.fixture(full: String()))
+        photo = Photo.fixture(id: "1", urls: PhotoURL.fixture(full: String()))
+        provider = UserDefaultsProviderMock()
         manager = PhotoDetailManagerMock()
-        viewModel = PhotoDetailViewModel(photo: photo, manager: manager)
+        viewModel = PhotoDetailViewModel(photo: photo, manager: manager, provider: provider)
     }
 
     override func tearDown() {
+        photo = nil
+        provider = nil
         manager = nil
         viewModel = nil
     }
@@ -45,5 +50,21 @@ class PhotoDetailViewModelTests: XCTestCase {
         case .error:
             XCTAssert(true)
         }
+    }
+    
+    func testSavePhoto() {
+        viewModel.savePhoto()
+        XCTAssert(provider.photos.contains(photo))
+    }
+    
+    func testRemovePhoto() {
+        viewModel.savePhoto()
+        viewModel.removePhoto()
+        XCTAssertFalse(provider.photos.contains(photo))
+    }
+    
+    func testCheckIfImageIsSaved() {
+        viewModel.savePhoto()
+        XCTAssert(viewModel.checkIfImageIsSaved())
     }
 }

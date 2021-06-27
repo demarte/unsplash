@@ -9,28 +9,49 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     
-    // MARK: - Properties
+    // MARK: - Public Properties
     
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     var tabBarController: UITabBarController
     
+    // MARK: - Private Properties
+    
+    let photosListNavController: UINavigationController
+    let favoritesNavController: UINavigationController
+    
     // MARK: - Initializer
     
-    init(tabBarController: UITabBarController, navigationController: UINavigationController) {
-        self.tabBarController = tabBarController
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.tabBarController = UITabBarController()
+        self.photosListNavController = UINavigationController()
+        self.favoritesNavController = UINavigationController()
     }
     
     // MARK: - Public Properties
     
     func start() {
-        let favoritesViewController = FavoritesViewController()
-        favoritesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        startPhotosList()
+        startFavorites()
+        tabBarController.viewControllers = [photosListNavController, favoritesNavController]
+        navigationController.viewControllers = [tabBarController]
+        navigationController.isNavigationBarHidden = true
+    }
+    
+    // MARK: - Private Methods
+
+    private func startPhotosList() {
+        photosListNavController.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: .zero)
         
-        navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: .zero)
-        tabBarController.viewControllers = [navigationController, favoritesViewController]
-        let photosListCoordinator = PhotosListCoordinator(navigationController: navigationController)
+        let photosListCoordinator = PhotosListCoordinator(navigationController: photosListNavController)
         photosListCoordinator.start()
+    }
+    
+    private func startFavorites() {
+        favoritesNavController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        
+        let favoritesCoordinator = FavoritesCoordinator(navigationController: favoritesNavController)
+        favoritesCoordinator.start()
     }
 }

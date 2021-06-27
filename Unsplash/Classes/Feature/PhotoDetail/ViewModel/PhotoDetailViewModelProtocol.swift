@@ -13,4 +13,6 @@ protocol PhotoDetailViewModelProtocol {
 
     func fetchPhotoDetails()
     func savePhoto()
+    func removePhoto()
+    func checkIfImageIsSaved() -> Bool
 }

@@ -44,6 +44,11 @@ class PhotoDetailViewController: UIViewController {
     private var imageViewTrailingConstraint: NSLayoutConstraint?
 
     // MARK: - Override
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpNavigationItems()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +77,6 @@ class PhotoDetailViewController: UIViewController {
     // MARK: - Private Methods
 
     private func finishInit() {
-        setUpNavigationItems()
         setUpView()
         bindElements()
         setUpScrollViewConstraints()
@@ -87,8 +91,11 @@ class PhotoDetailViewController: UIViewController {
     }
     
     private func setUpNavigationItems() {
+        guard let viewModel = viewModel  else { return }
         let saveItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(savePhoto))
-        navigationItem.rightBarButtonItem = saveItem
+        let removeItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(removePhoto))
+        navigationItem.rightBarButtonItem = viewModel.checkIfImageIsSaved() ? removeItem : saveItem
+        view.layoutIfNeeded()
     }
 
     private func bindElements() {
@@ -163,6 +170,13 @@ class PhotoDetailViewController: UIViewController {
     @objc
     private func savePhoto() {
         viewModel?.savePhoto()
+        setUpNavigationItems()
+    }
+    
+    @objc
+    private func removePhoto() {
+        viewModel?.removePhoto()
+        setUpNavigationItems()
     }
 
     private func updateMinZoomScaleForSize(_ size: CGSize) {
