@@ -27,6 +27,15 @@ class PhotosListManagerMock: PhotosListManagerProtocol {
         }
     }
     
+    func searchPhotos(by searchTerm: String, completion: @escaping FetchPhotosCompletion<[Photo]>) {
+        switch state {
+        case .success:
+            completion(.success([Photo.fixture()]))
+        case .failure:
+            completion(.failure(APIResponseError.invalidResponse))
+        }
+    }
+    
     func retrieveImage(for photo: Photo, completion: @escaping FetchImageCompletion) {
         switch state {
         case .success:

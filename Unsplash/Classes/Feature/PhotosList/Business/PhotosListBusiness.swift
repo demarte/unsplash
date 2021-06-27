@@ -33,6 +33,18 @@ final class PhotosListBusiness: PhotosListBusinessProtocol {
             }
         }
     }
+    
+    func searchPhotos(with request: URLRequest?, completion: @escaping FetchPhotosCompletion<[Photo]>) {
+        provider.request(PhotoResult.self, urlRequest: request) { [weak self] response in
+            guard let self = self else { return }
+            do {
+                let result = try response()
+                completion(.success(result.results))
+            } catch {
+                completion(.failure(self.handleError(error)))
+            }
+        }
+    }
 
     // MARK: - Private Methods
 

@@ -9,7 +9,7 @@ import UIKit
 
 class PhotosListCoordinator: Coordinator {
 
-    // MARK: - Properties
+    // MARK: - Public Properties
 
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
@@ -26,8 +26,8 @@ class PhotosListCoordinator: Coordinator {
         let viewModel = PhotosListViewModel()
         let viewController = PhotosListViewController(viewModel: viewModel)
         viewController.showDetails = showDetails
-        viewController.navigationItem.title = "Unsplash"
-        viewController.navigationItem.largeTitleDisplayMode = .automatic
+        viewController.navigationItem.title = "Unsplash"        
+        navigationController.navigationBar.prefersLargeTitles = true
         navigationController.pushViewController(viewController, animated: false)
     }
 }

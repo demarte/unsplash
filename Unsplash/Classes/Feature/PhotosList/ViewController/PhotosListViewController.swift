@@ -16,6 +16,7 @@ class PhotosListViewController: UIViewController {
         static let sectionInsets = UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
         static let footerHeight: CGFloat = 80.0
         static let firstPage: String = "1"
+        static let debounceTime: TimeInterval = 0.4
     }
 
     // MARK: - Public Properties
@@ -25,6 +26,16 @@ class PhotosListViewController: UIViewController {
     // MARK: - Private Properties
 
     private let viewModel: PhotosListViewModelProtocol?
+    private let debouncer = Debouncer(timeInterval: Constants.debounceTime)
+    
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search free high-resolution photos"
+        searchController.searchBar.delegate = self
+        return searchController
+    }()
 
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
@@ -40,35 +51,40 @@ class PhotosListViewController: UIViewController {
         return activityView
     }()
 
-    // MARK: - Override
+    // MARK: - Initializer
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init(viewModel: PhotosListViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        finishInit()
+    }
+
+    required init?(coder: NSCoder) {
+        self.viewModel = nil
+        super.init(coder: coder)
+        finishInit()
+    }
+
+    // MARK: - Private Methods
+    
+    private func finishInit() {
+        setUpNavigationItem()
         setUpView()
         setUpConstraints()
         fetchPhotos()
         bindElements()
     }
 
-    // MARK: - Initializer
-
-    init(viewModel: PhotosListViewModelProtocol) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        self.viewModel = nil
-        super.init(coder: coder)
-    }
-
-    // MARK: - Private Methods
-
     private func setUpView() {
         view.addSubview(collectionView)
         view.addSubview(activityView)
         view.backgroundColor = .systemBackground
         setUpCollectionView()
+    }
+    
+    private func setUpNavigationItem() {
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     private func setUpCollectionView() {
@@ -125,10 +141,25 @@ class PhotosListViewController: UIViewController {
         collectionView.reloadData()
     }
 
-    private func handleError(_ apiError: APIResponseError) { }
+    private func handleError(_ apiError: APIResponseError) {
+        activityView.stopAnimating()
+        collectionView.reloadData()
+    }
 
     private func scrollViewDidReachBottom() {
         viewModel?.fetch()
+    }
+    
+    private func setUpPhotoCell(_ cell: PhotosListCell, at indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        switch viewModel.state.value {
+        case .loaded(let photos):
+            let photo = photos[indexPath.row]
+            let viewModelCell = PhotosListCellViewModel(model: photo)
+            cell.setUpCell(with: viewModelCell)
+        default:
+            return
+        }
     }
 }
 
@@ -151,19 +182,11 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let viewModel = viewModel,
-              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosListCell.cellIdentifier,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotosListCell.cellIdentifier,
                                                             for: indexPath) as? PhotosListCell else {
             return UICollectionViewCell()
         }
-        switch viewModel.state.value {
-        case .loaded(let photos):
-            let photo = photos[indexPath.row]
-            let viewModelCell = PhotosListCellViewModel(model: photo)
-            cell.setUpCell(with: viewModelCell)
-        default:
-            break
-        }
+        setUpPhotoCell(cell, at: indexPath)
         return cell
     }
 
@@ -191,10 +214,15 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        guard let viewModel = viewModel, !viewModel.isFetching.value else { return }
-        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
-        if bottomEdge >= scrollView.contentSize.height {
-            scrollViewDidReachBottom()
+        guard let viewModel = viewModel, !viewModel.isFetching.value, !viewModel.isFiltering else { return }
+        switch viewModel.state.value {
+        case .loaded:
+            let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
+            if bottomEdge >= scrollView.contentSize.height {
+                scrollViewDidReachBottom()
+            }
+        default:
+            break
         }
     }
 }
@@ -228,5 +256,27 @@ extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: Constants.footerHeight)
+    }
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension PhotosListViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        guard let searchText = searchBar.text, !searchText.isEmpty else { return }
+        debouncer.handler = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel?.searchPhotos(by: searchText)
+        }
+        debouncer.renewInterval()
+    }
+}
+
+extension PhotosListViewController: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel?.fetch()
     }
 }

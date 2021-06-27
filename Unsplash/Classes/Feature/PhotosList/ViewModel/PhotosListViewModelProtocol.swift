@@ -12,6 +12,8 @@ protocol PhotosListViewModelProtocol {
     var state: Dynamic<PhotosListViewModelState> { get }
     var isFetching: Dynamic<Bool> { get }
     var currentPage: Int { get }
+    var isFiltering: Bool { get }
 
     func fetch()
+    func searchPhotos(by searchTerm: String)
 }

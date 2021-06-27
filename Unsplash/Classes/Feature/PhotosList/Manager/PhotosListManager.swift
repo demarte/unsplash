@@ -36,6 +36,16 @@ class PhotosListManager: OperationQueue, PhotosListManagerProtocol {
         addOperation(fetchOperation)
     }
     
+    func searchPhotos(by searchTerm: String, completion: @escaping FetchPhotosCompletion<[Photo]>) {
+        let searchOperation = SearchPhotosOperation(searchTerm: searchTerm, business: business)
+        searchOperation.completionBlock = {
+            DispatchQueue.main.async {
+                completion(searchOperation.photosListResult ?? .failure(.noData))
+            }
+        }
+        addOperation(searchOperation)
+    }
+    
     func retrieveImage(for photo: Photo, completion: @escaping FetchImageCompletion) {
         guard let urlString = photo.urls?.small, let url = URL(string: urlString) else {
             completion(nil)

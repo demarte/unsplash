@@ -7,6 +7,15 @@
 
 import Foundation
 
+struct PhotoResult: Codable {
+    
+    var results: [Photo]
+    
+    enum CodingKeys: String, CodingKey {
+        case results
+    }
+}
+
 struct Photo: Codable {
     
     // MARK: - Properties

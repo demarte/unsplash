@@ -9,4 +9,5 @@ import Foundation
 
 protocol PhotosListBusinessProtocol {
     func fetchPhotos(with request: URLRequest?, completion: @escaping FetchPhotosCompletion<[Photo]>)
+    func searchPhotos(with request: URLRequest?, completion: @escaping FetchPhotosCompletion<[Photo]>)
 }

@@ -20,11 +20,15 @@ class FavoritesCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
+    // MARK: - Public Methods
+    
     func start() {
         let favoritesViewController = FavoritesViewController()
+        favoritesViewController.navigationItem.title = "Favorites"
         favoritesViewController.showDetails = showDetails
         favoritesViewController.showConfirmationAlert = showConfirmationAlert
         favoritesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        navigationController.navigationBar.prefersLargeTitles = true
         navigationController.pushViewController(favoritesViewController, animated: false)
     }
 }
