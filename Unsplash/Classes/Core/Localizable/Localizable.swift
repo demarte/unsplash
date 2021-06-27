@@ -19,6 +19,7 @@ enum Localizable: String {
     case emptyStateDescription
     case unsplash
     case placeholder
+    case notFound
     
     var localize: String {
         NSLocalizedString(self.rawValue, tableName: Localizable.tableName, bundle: .main, value: String(), comment: String())

@@ -558,7 +558,6 @@
 				ECE9ECC92687B1EE0016D418 /* Coordinator */,
 				ECE9ECC62687A5350016D418 /* ViewModel */,
 				ECEB32162684B0C700822D63 /* ViewController */,
-				ECE9ECC3268799E80016D418 /* View */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -577,14 +576,6 @@
 				EC6D717926664D660037DC6A /* AsyncOperation.swift */,
 			);
 			path = AsyncOperation;
-			sourceTree = "<group>";
-		};
-		ECE9ECC3268799E80016D418 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				ECE9ECC4268799FB0016D418 /* EmptyStateCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		ECE9ECC62687A5350016D418 /* ViewModel */ = {
@@ -675,6 +666,7 @@
 		ECEF021526695D0A002FA5A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ECE9ECC4268799FB0016D418 /* EmptyStateCell.swift */,
 				ECEF021626695D34002FA5A3 /* PhotosListCell.swift */,
 				EC1DD630267D67400034ECDE /* LoadingCell.swift */,
 			);

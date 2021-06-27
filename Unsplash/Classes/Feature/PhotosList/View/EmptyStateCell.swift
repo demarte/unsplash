@@ -19,7 +19,6 @@ final class EmptyStateCell: UICollectionReusableView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = Localizable.emptyStateTitle.localize
         label.font = UIFont.font(type: .bold, textStyle: .title2)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +27,6 @@ final class EmptyStateCell: UICollectionReusableView {
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = Localizable.emptyStateDescription.localize
         label.textColor = .white
         label.font = UIFont.font(type: .regular, textStyle: .callout)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -56,6 +54,13 @@ final class EmptyStateCell: UICollectionReusableView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         finishInit()
+    }
+    
+    // MARK: - Public Methods
+    
+    func setUp(title: String?, description: String?) {
+        titleLabel.text = title
+        descriptionLabel.text = description
     }
     
     // MARK: - Private Methods

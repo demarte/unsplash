@@ -50,6 +50,19 @@ class PhotosListViewController: UIViewController {
         activityView.translatesAutoresizingMaskIntoConstraints = false
         return activityView
     }()
+    
+    // MARK: - Private Computed Properties
+    
+    private var emptyStateCellSize: CGSize {
+        guard let viewModel = viewModel, viewModel.isFiltering else { return .zero }
+        
+        switch viewModel.state.value {
+        case .loaded(let photos):
+            return photos.isEmpty ? CGSize(width: collectionView.frame.width, height: collectionView.frame.height) : .zero
+        default:
+            return .zero
+        }
+    }
 
     // MARK: - Initializer
 
@@ -92,6 +105,9 @@ class PhotosListViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
         collectionView.register(PhotosListCell.self, forCellWithReuseIdentifier: PhotosListCell.cellIdentifier)
+        collectionView.register(EmptyStateCell.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: EmptyStateCell.identifier)
         collectionView.register(LoadingCell.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                                 withReuseIdentifier: LoadingCell.identifier)
@@ -200,17 +216,27 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
             return
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                         withReuseIdentifier: LoadingCell.identifier,
-                                                                         for: indexPath) as? LoadingCell else {
-            return UICollectionReusableView()
+        if kind == UICollectionView.elementKindSectionHeader {
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                                   withReuseIdentifier: EmptyStateCell.identifier,
+                                                                                   for: indexPath) as? EmptyStateCell else {
+                return UICollectionReusableView()
+            }
+            headerView.setUp(title: Localizable.notFound.localize, description: nil)
+            return headerView
+        } else {
+            guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                                   withReuseIdentifier: LoadingCell.identifier,
+                                                                                   for: indexPath) as? LoadingCell else {
+                return UICollectionReusableView()
+            }
+            viewModel?.isFetching.value ?? false ? footerView.startLoading() : footerView.stopLoading()
+            return footerView
         }
-        viewModel?.isFetching.value ?? false ? footerView.startLoading() : footerView.stopLoading()
-        return footerView
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -250,6 +276,10 @@ extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Constants.sectionInsets.top
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return emptyStateCellSize
     }
 
     func collectionView(_ collectionView: UICollectionView,

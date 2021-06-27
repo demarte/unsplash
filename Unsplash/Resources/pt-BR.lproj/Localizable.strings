@@ -14,3 +14,4 @@
 "emptyStateDescription" = "Todas as fotos salvas serão mostradas aqui.";
 "unsplash" = "Unsplash";
 "placeholder" = "Buscar fotos de alta resolução";
+"notFound" = "Nenhum resultado encontrado";

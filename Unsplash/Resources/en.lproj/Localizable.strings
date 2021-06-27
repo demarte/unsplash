@@ -14,3 +14,4 @@
 "emptyStateDescription" = "All the photos you've saved will show up here.";
 "unsplash" = "Unsplash";
 "placeholder" = "Search free high-resolution photos";
+"notFound" = "No results found";

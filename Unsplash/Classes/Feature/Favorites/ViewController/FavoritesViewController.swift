@@ -155,6 +155,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
                                                                          for: indexPath) as? EmptyStateCell else {
             return UICollectionReusableView()
         }
+        view.setUp(title: Localizable.emptyStateTitle.localize, description: Localizable.emptyStateDescription.localize)
         return view
     }
     
