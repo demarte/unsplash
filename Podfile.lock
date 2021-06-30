@@ -1,20 +1,28 @@
 PODS:
+  - iOSSnapshotTestCase (6.2.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 6.2.0)
+  - iOSSnapshotTestCase/Core (6.2.0)
+  - iOSSnapshotTestCase/SwiftSupport (6.2.0):
+    - iOSSnapshotTestCase/Core
   - Kingfisher (6.3.0)
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
+  - iOSSnapshotTestCase
   - Kingfisher (~> 6.3.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - iOSSnapshotTestCase
     - Kingfisher
     - SwiftLint
 
 SPEC CHECKSUMS:
+  iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: c7fc389a56fdbcdb8de651898c2c52da82c0de6b
+PODFILE CHECKSUM: d5616d5f5080cb9e1a566cb45c0924e77257fc76
 
 COCOAPODS: 1.10.1

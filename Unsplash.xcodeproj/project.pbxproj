@@ -731,6 +731,7 @@
 				EC6D713F266642ED0037DC6A /* Sources */,
 				EC6D7140266642ED0037DC6A /* Frameworks */,
 				EC6D7141266642ED0037DC6A /* Resources */,
+				AB2B9BB653CC0D0435736319 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -913,6 +914,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB2B9BB653CC0D0435736319 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnsplashTests/Pods-UnsplashTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnsplashTests/Pods-UnsplashTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnsplashTests/Pods-UnsplashTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B91F13B89C64C8116E085A2D /* [CP] Check Pods Manifest.lock */ = {

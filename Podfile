@@ -7,10 +7,11 @@ target 'Unsplash' do
 
   # Pods for Unsplash
   pod 'Kingfisher', '~> 6.3.0'
+  pod 'SwiftLint'
 
   target 'UnsplashTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'iOSSnapshotTestCase'
   end
 
   target 'UnsplashUITests' do
