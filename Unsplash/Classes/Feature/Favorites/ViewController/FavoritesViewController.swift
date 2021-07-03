@@ -84,6 +84,7 @@ final class FavoritesViewController: UIViewController {
     }
     
     private func setUpView() {
+        view.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         collectionView.backgroundColor = .clear
         collectionView.register(PhotosListCell.self, forCellWithReuseIdentifier: PhotosListCell.cellIdentifier)

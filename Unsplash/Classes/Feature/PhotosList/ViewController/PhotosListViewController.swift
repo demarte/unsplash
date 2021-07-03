@@ -134,8 +134,8 @@ class PhotosListViewController: UIViewController {
             switch state {
             case .loading:
                 self.handleLoading()
-            case .loaded(let photos):
-                self.handleLoaded(with: photos)
+            case .loaded:
+                self.handleLoaded()
             case .error(let error):
                 self.handleError(error)
             }
@@ -152,7 +152,7 @@ class PhotosListViewController: UIViewController {
         activityView.startAnimating()
     }
 
-    private func handleLoaded(with photos: [Photo]) {
+    private func handleLoaded() {
         activityView.stopAnimating()
         collectionView.reloadData()
     }

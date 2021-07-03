@@ -48,6 +48,7 @@ final class LoadingCell: UICollectionReusableView {
     }
 
     private func setUpView() {
+        backgroundColor = .clear
         addSubview(activityIndicator)
         setUpConstraints()
     }

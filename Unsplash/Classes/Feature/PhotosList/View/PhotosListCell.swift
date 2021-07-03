@@ -44,12 +44,6 @@ final class PhotosListCell: UICollectionViewCell {
         finishInt()
     }
 
-    // MARK: Override
-
-    override func prepareForReuse() {
-        imageView.image = nil
-    }
-
     // MARK: - Public Methods
 
     func setUpCell(with viewModel: PhotosListCellViewModelProtocol) {

@@ -20,14 +20,12 @@ final class EmptyStateCell: UICollectionReusableView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.font(type: .bold, textStyle: .title2)
-        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
         label.font = UIFont.font(type: .regular, textStyle: .callout)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -71,7 +69,7 @@ final class EmptyStateCell: UICollectionReusableView {
     }
     
     private func setUpView() {
-        backgroundColor = .clear
+        backgroundColor = .systemBackground
         addSubview(stackView)
     }
     

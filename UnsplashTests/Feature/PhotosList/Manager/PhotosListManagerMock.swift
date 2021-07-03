@@ -39,7 +39,7 @@ class PhotosListManagerMock: PhotosListManagerProtocol {
     func retrieveImage(for photo: Photo, completion: @escaping FetchImageCompletion) {
         switch state {
         case .success:
-            completion(UIImage())
+            completion(UIImage(named: "image_mock", in: Bundle(for: PhotosListManagerMock.self), compatibleWith: nil))
         case .failure:
             completion(nil)
         }
