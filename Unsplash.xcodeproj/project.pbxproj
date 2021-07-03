@@ -52,6 +52,8 @@
 		EC8B514326910F9D00FF4A2B /* EmptyStateCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B514226910F9D00FF4A2B /* EmptyStateCellTests.swift */; };
 		EC8B51452691113300FF4A2B /* PhotosListCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B51442691113300FF4A2B /* PhotosListCellTests.swift */; };
 		EC8B51472691134000FF4A2B /* PhotosListCellViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B51462691134000FF4A2B /* PhotosListCellViewModelMock.swift */; };
+		EC8B514A269115CA00FF4A2B /* PhotoDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B5149269115CA00FF4A2B /* PhotoDetailViewControllerTests.swift */; };
+		EC8B514C269117A200FF4A2B /* PhotoDetailViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B514B269117A200FF4A2B /* PhotoDetailViewModelMock.swift */; };
 		EC94B5D326683BC100F71C22 /* PhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94B5D226683BC100F71C22 /* PhotoURL.swift */; };
 		EC94B5D7266844EB00F71C22 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94B5D6266844EB00F71C22 /* Server.swift */; };
 		EC9BE9C6267FEEEB00731293 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9BE9C5267FEEEB00731293 /* MainCoordinator.swift */; };
@@ -162,6 +164,8 @@
 		EC8B514226910F9D00FF4A2B /* EmptyStateCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateCellTests.swift; sourceTree = "<group>"; };
 		EC8B51442691113300FF4A2B /* PhotosListCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCellTests.swift; sourceTree = "<group>"; };
 		EC8B51462691134000FF4A2B /* PhotosListCellViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCellViewModelMock.swift; sourceTree = "<group>"; };
+		EC8B5149269115CA00FF4A2B /* PhotoDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		EC8B514B269117A200FF4A2B /* PhotoDetailViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModelMock.swift; sourceTree = "<group>"; };
 		EC94B5D226683BC100F71C22 /* PhotoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoURL.swift; sourceTree = "<group>"; };
 		EC94B5D6266844EB00F71C22 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		EC9BE9C5267FEEEB00731293 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 		EC3E7C75267BF2E000B806AE /* PhotoDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EC8B51482691157B00FF4A2B /* ViewController */,
 				EC3E7C79267BF65F00B806AE /* ViewModel */,
 			);
 			path = PhotoDetail;
@@ -267,6 +272,7 @@
 			children = (
 				EC3E7C7A267BF67D00B806AE /* PhotoDetailViewModelTests.swift */,
 				EC532E04267FA17600827CB2 /* PhotoDetailManagerMock.swift */,
+				EC8B514B269117A200FF4A2B /* PhotoDetailViewModelMock.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -562,6 +568,14 @@
 				EC8B51442691113300FF4A2B /* PhotosListCellTests.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EC8B51482691157B00FF4A2B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EC8B5149269115CA00FF4A2B /* PhotoDetailViewControllerTests.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		EC94B5D82668475C00F71C22 /* ViewModel */ = {
@@ -1081,10 +1095,12 @@
 				EC78C27B2689051F00175465 /* FavoritesCoordinatorTests.swift in Sources */,
 				EC78C26A2688B5EA00175465 /* FavoritesViewModelTests.swift in Sources */,
 				ECEF021226692944002FA5A3 /* PhotosListCoordinatorTests.swift in Sources */,
+				EC8B514A269115CA00FF4A2B /* PhotoDetailViewControllerTests.swift in Sources */,
 				EC3E7C6D267BDFFE00B806AE /* PhotosListCellViewModelTests.swift in Sources */,
 				EC8B51452691113300FF4A2B /* PhotosListCellTests.swift in Sources */,
 				ECEDB165266906890052B930 /* PhotosListManagerMock.swift in Sources */,
 				EC532E05267FA17600827CB2 /* PhotoDetailManagerMock.swift in Sources */,
+				EC8B514C269117A200FF4A2B /* PhotoDetailViewModelMock.swift in Sources */,
 				EC3E7C7B267BF67D00B806AE /* PhotoDetailViewModelTests.swift in Sources */,
 				ECC5BBCF268D17CD0068B2AA /* PhotosListViewModelMock.swift in Sources */,
 				EC3E7C74267BF2A400B806AE /* PhotosListBusinessMock.swift in Sources */,
