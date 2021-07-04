@@ -38,6 +38,7 @@ extension FavoritesCoordinator {
     func showDetails(for photo: Photo) {
         let viewModel = PhotoDetailViewModel(photo: photo)
         let viewController = PhotoDetailViewController(viewModel: viewModel)
+        viewController.presentGenericError = presentPhotoDetailsGenericError
         navigationController.pushViewController(viewController, animated: true)
     }
     
@@ -48,5 +49,17 @@ extension FavoritesCoordinator {
         alertController.addAction(destructiveAction)
         alertController.addAction(cancelAction)
         navigationController.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentPhotoDetailsGenericError() {
+        let genericErrorViewController = GenericErrorViewController()
+        genericErrorViewController.modalPresentationStyle = .overFullScreen
+        genericErrorViewController.dismissModal = backToRoot
+        navigationController.present(genericErrorViewController, animated: true, completion: nil)
+    }
+    
+    private func backToRoot() {
+        navigationController.dismiss(animated: true, completion: nil)
+        navigationController.popToRootViewController(animated: true)
     }
 }

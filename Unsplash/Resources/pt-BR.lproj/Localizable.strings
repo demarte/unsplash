@@ -15,3 +15,6 @@
 "unsplash" = "Unsplash";
 "placeholder" = "Buscar fotos de alta resolução";
 "notFound" = "Nenhum resultado encontrado";
+"noConnection" = "Sem conexão com a internet";
+"genericErrorTitle" = "Desculpe algo deu errado 😔";
+"genericErrorDescription" = "Tente novamente mais tarde";

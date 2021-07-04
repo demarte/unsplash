@@ -13,3 +13,12 @@ protocol Coordinator {
 
     func start()
 }
+
+extension Coordinator {
+    
+    func presentGenericError() {
+        let genericErrorViewController = GenericErrorViewController()
+        genericErrorViewController.modalPresentationStyle = .formSheet
+        navigationController.present(genericErrorViewController, animated: true, completion: nil)
+    }
+}

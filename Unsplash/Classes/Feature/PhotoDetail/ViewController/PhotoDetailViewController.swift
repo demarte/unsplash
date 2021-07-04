@@ -11,7 +11,12 @@ class PhotoDetailViewController: UIViewController {
     
     private enum Constants {
         static let padding: CGFloat = 8.0
+        static let numberOfTaps: Int = 2
     }
+    
+    // MARK: - Public Properties
+
+    var presentGenericError: (() -> Void)?
 
     // MARK: - Private Properties
 
@@ -20,6 +25,7 @@ class PhotoDetailViewController: UIViewController {
     private lazy var activityView: UIActivityIndicatorView = {
         let activityView = UIActivityIndicatorView(style: .large)
         activityView.color = .lightGray
+        activityView.hidesWhenStopped = true
         activityView.translatesAutoresizingMaskIntoConstraints = false
         return activityView
     }()
@@ -44,11 +50,6 @@ class PhotoDetailViewController: UIViewController {
     private var imageViewTrailingConstraint: NSLayoutConstraint?
 
     // MARK: - Override
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setUpNavigationItems()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,19 +145,20 @@ class PhotoDetailViewController: UIViewController {
 
     private func handleLoaded(with image: UIImage?) {
         activityView.stopAnimating()
-        activityView.isHidden = true
         imageView.image = image
         imageView.sizeToFit()
         setUpScrollView()
+        setUpNavigationItems()
     }
 
     private func handleError() {
-        /* not implemented */
+        activityView.stopAnimating()
+        presentGenericError?()
     }
 
     private func setUpScrollView() {
         let gesture = UITapGestureRecognizer()
-        gesture.numberOfTapsRequired = 2
+        gesture.numberOfTapsRequired = Constants.numberOfTaps
         gesture.addTarget(self, action: #selector(handleDoubleTap))
         scrollView.contentSize = imageView.frame.size
         scrollView.addGestureRecognizer(gesture)

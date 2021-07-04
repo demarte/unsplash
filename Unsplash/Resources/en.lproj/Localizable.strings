@@ -15,3 +15,6 @@
 "unsplash" = "Unsplash";
 "placeholder" = "Search free high-resolution photos";
 "notFound" = "No results found";
+"noConnection" = "No internet connection";
+"genericErrorTitle" = "Sorry, something wrong happened 😔";
+"genericErrorDescription" = "Try again later";

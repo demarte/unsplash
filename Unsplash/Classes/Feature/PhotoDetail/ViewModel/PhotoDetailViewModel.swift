@@ -40,6 +40,7 @@ class PhotoDetailViewModel: PhotoDetailViewModelProtocol {
     // MARK: Public Methods
 
     func fetchPhotoDetails() {
+        state.value = .loading
         manager.retrieveImage(for: photo) { [weak self] result in
             guard let self = self else { return }
             switch result {

@@ -22,6 +22,7 @@ class PhotosListViewController: UIViewController {
     // MARK: - Public Properties
 
     var showDetails: ((Photo) -> Void)?
+    var presentGenericError: (() -> Void)?
 
     // MARK: - Private Properties
 
@@ -40,6 +41,7 @@ class PhotosListViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.refreshControl = refreshControl
         return collectionView
     }()
 
@@ -49,6 +51,12 @@ class PhotosListViewController: UIViewController {
         activityView.hidesWhenStopped = true
         activityView.translatesAutoresizingMaskIntoConstraints = false
         return activityView
+    }()
+    
+    private lazy var refreshControl: UIRefreshControl = {
+       let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshColletionView), for: .valueChanged)
+       return refreshControl
     }()
     
     // MARK: - Private Computed Properties
@@ -127,6 +135,18 @@ class PhotosListViewController: UIViewController {
     private func fetchPhotos() {
         viewModel?.fetch()
     }
+    
+    @objc
+    private func refreshColletionView() {
+        guard let viewModel = viewModel else { return }
+        switch viewModel.state.value {
+        case .error:
+            viewModel.fetch()
+        default:
+            break
+        }
+        collectionView.refreshControl?.endRefreshing()
+    }
 
     private func bindElements() {
         viewModel?.state.bind { [weak self] state in
@@ -160,6 +180,7 @@ class PhotosListViewController: UIViewController {
     private func handleError(_ apiError: APIResponseError) {
         activityView.stopAnimating()
         collectionView.reloadData()
+        presentGenericError?()
     }
 
     private func scrollViewDidReachBottom() {
