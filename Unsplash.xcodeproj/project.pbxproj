@@ -87,6 +87,7 @@
 		ECEF022626696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEF022526696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift */; };
 		ECFDCDD52691EB300077544F /* GenericErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFDCDD42691EB300077544F /* GenericErrorViewController.swift */; };
 		ECFDCDD82691ECAF0077544F /* GenericErrorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFDCDD72691ECAF0077544F /* GenericErrorViewControllerTests.swift */; };
+		ECFDCDDA26920FFC0077544F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFDCDD926920FFC0077544F /* UIColor.swift */; };
 		F2AC0617B782A477A587AE57 /* Pods_UnsplashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BE93A3E2F1EC1567DA73AD /* Pods_UnsplashTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -203,6 +204,7 @@
 		ECEF022526696C35002FA5A3 /* PhotoDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		ECFDCDD42691EB300077544F /* GenericErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericErrorViewController.swift; sourceTree = "<group>"; };
 		ECFDCDD72691ECAF0077544F /* GenericErrorViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericErrorViewControllerTests.swift; sourceTree = "<group>"; };
+		ECFDCDD926920FFC0077544F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		F20193EEA76174771D5E2636 /* Pods_Unsplash_UnsplashUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash_UnsplashUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -749,6 +751,7 @@
 				ECEF021326695825002FA5A3 /* UICollectionViewCell+Identifier.swift */,
 				EC67916D267CCF14002527DC /* UIFont.swift */,
 				ECBCEB332687664C00E489F2 /* Array+JSONList.swift */,
+				ECFDCDD926920FFC0077544F /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1135,6 +1138,7 @@
 				EC6D7133266642EC0037DC6A /* SceneDelegate.swift in Sources */,
 				EC94B5D7266844EB00F71C22 /* Server.swift in Sources */,
 				ECEDB1602668FE840052B930 /* APIProviderProtocol.swift in Sources */,
+				ECFDCDDA26920FFC0077544F /* UIColor.swift in Sources */,
 				EC3E7C71267BE67400B806AE /* PhotosListBusinessProtocol.swift in Sources */,
 				EC8B51502691193F00FF4A2B /* ConnectionErrorView.swift in Sources */,
 				ECE9ECC5268799FB0016D418 /* EmptyStateCell.swift in Sources */,

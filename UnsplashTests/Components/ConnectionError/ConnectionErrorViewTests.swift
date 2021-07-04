@@ -10,16 +10,16 @@ import XCTest
 
 class ConnectionErrorViewTests: BaseSnapshotTest {
     
-    func testLoadingView() {
+    func testConnectionView() {
         let sut = makeSUT()
         verifySnapshotView { sut }
     }
     
     private func makeSUT() -> ConnectionErrorView {
-        let size = CGSize(width: 414, height: 180.0)
+        let size = CGSize(width: 414, height: 70.0)
         let frame = CGRect(origin: .zero, size: size)
         let view = ConnectionErrorView(frame: frame)
-        view.setUpView(with: Localizable.noConnection.localize)
+        view.setUp(title: Localizable.noConnection.localize)
         return view
     }
 }

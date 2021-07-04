@@ -7,22 +7,40 @@
 
 import UIKit
 
-final class ConnectionErrorView: UIView {
+final class ConnectionErrorView: UICollectionReusableView {
+    
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let spacing: CGFloat = 8.0
+        static let warningIconSize: CGFloat = 30.0
+        static let warningIconName: String = "wifi.slash"
+    }
     
     // MARK: - Private Properties
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.font(type: .bold, textStyle: .title2)
+        label.font = UIFont.font(type: .semiBold, textStyle: .headline)
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .red
         return label
     }()
     
+    private lazy var warningIcon: UIImageView = {
+        let largeFont = UIFont.systemFont(ofSize: Constants.warningIconSize)
+        let configuration = UIImage.SymbolConfiguration(font: largeFont)
+        let image = UIImage(systemName: Constants.warningIconName, withConfiguration: configuration)
+        let imageView = UIImageView(image: image)
+        imageView.tintColor = .white
+        return imageView
+    }()
+    
     private lazy var stackView: UIStackView = {
-        let arrangedSubViews = [titleLabel]
+        let arrangedSubViews = [warningIcon, titleLabel]
         let stackView = UIStackView(arrangedSubviews: arrangedSubViews)
-        stackView.axis = .vertical
+        stackView.spacing = Constants.spacing
+        stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,39 +48,39 @@ final class ConnectionErrorView: UIView {
     }()
     
     // MARK: - Initializer
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        finishInt()
+        finishInit()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        finishInt()
+        finishInit()
     }
     
     // MARK: - Public Methods
     
-    func setUpView(with title: String) {
+    func setUp(title: String?) {
         titleLabel.text = title
     }
     
     // MARK: - Private Methods
     
-    private func finishInt() {
+    private func finishInit() {
         setUpView()
         setUpConstraints()
     }
-
+    
     private func setUpView() {
-        backgroundColor = .gray
-        addSubview(titleLabel)
+        backgroundColor = .error
+        addSubview(stackView)
     }
-
+    
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 }
