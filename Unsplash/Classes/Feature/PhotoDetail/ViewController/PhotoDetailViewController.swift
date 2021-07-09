@@ -48,6 +48,13 @@ class PhotoDetailViewController: UIViewController {
     private var imageViewBottomConstraint: NSLayoutConstraint?
     private var imageViewLeadingConstraint: NSLayoutConstraint?
     private var imageViewTrailingConstraint: NSLayoutConstraint?
+    
+    private var minZoomScale: CGFloat {
+        let size = view.bounds.size
+        let widthScale = size.width / imageView.bounds.width
+        let heightScale = size.height / imageView.bounds.height
+        return min(widthScale, heightScale)
+    }
 
     // MARK: - Override
 
@@ -58,7 +65,7 @@ class PhotoDetailViewController: UIViewController {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        updateMinZoomScaleForSize(view.bounds.size)
+        updateMinZoomScale()
     }
 
     // MARK: - Initializer
@@ -166,6 +173,7 @@ class PhotoDetailViewController: UIViewController {
 
     @objc
     private func handleDoubleTap() {
+        guard scrollView.zoomScale != minZoomScale else { return }
         scrollView.zoom(to: imageView.bounds, animated: true)
     }
     
@@ -181,13 +189,9 @@ class PhotoDetailViewController: UIViewController {
         setUpNavigationItems()
     }
 
-    private func updateMinZoomScaleForSize(_ size: CGSize) {
-        let widthScale = size.width / imageView.bounds.width
-        let heightScale = size.height / imageView.bounds.height
-        let minScale = min(widthScale, heightScale)
-
-        scrollView.minimumZoomScale = minScale
-        scrollView.zoomScale = minScale
+    private func updateMinZoomScale() {
+        scrollView.minimumZoomScale = minZoomScale
+        scrollView.zoomScale = minZoomScale
     }
 
     private func updateConstraints(for size: CGSize) {
