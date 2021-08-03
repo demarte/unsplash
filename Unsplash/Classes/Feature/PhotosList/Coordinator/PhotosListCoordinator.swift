@@ -50,7 +50,8 @@ extension PhotosListCoordinator {
     }
     
     private func backToRoot() {
-        navigationController.dismiss(animated: true, completion: nil)
-        navigationController.popToRootViewController(animated: true)
+        navigationController.dismiss(animated: true) { [weak self] in
+            self?.navigationController.popToRootViewController(animated: true)
+        }
     }
 }

@@ -43,6 +43,11 @@ final class PhotosListCell: UICollectionViewCell {
         super.init(coder: coder)
         finishInt()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
 
     // MARK: - Public Methods
 
